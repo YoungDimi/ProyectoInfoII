@@ -66,9 +66,10 @@ namespace SimulatorConsole
                 int i = 0;
                 int ciclos = 20;
                 double distanciaSeguridad = 10.0;
+                int tiempoCiclo = 10;
                 while (i < ciclos)
                 {
-                    lista.Mover(10);
+                    lista.Mover(tiempoCiclo);
                     lista.EscribeConsola();
 
                     if (plan_a.Conflicto(plan_b, distanciaSeguridad))

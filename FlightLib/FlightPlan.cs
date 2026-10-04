@@ -11,6 +11,7 @@ namespace FlightLib
         // Atributos
 
         string id; // identificador
+        Position initialPosition;
         Position currentPosition; // posicion actual
         Position finalPosition; // posicion final
         double velocidad;
@@ -19,17 +20,47 @@ namespace FlightLib
         public FlightPlan(string id, double cpx, double cpy, double fpx, double fpy, double velocidad)
         {
             this.id = id;
+            this.initialPosition = new Position(cpx, cpy);
             this.currentPosition = new Position(cpx, cpy);
             this.finalPosition = new Position(fpx, fpy);
             this.velocidad = velocidad;
         }
 
         // Metodos
+        public string GetId()
+        { return id; }
 
+        public void SetId(string id)
+        { this.id = id; }
+
+        public Position GetCurrentPosition()
+        { return currentPosition; }
+
+        public void SetCurrentPosition(Position currentPosition)
+        { this.currentPosition = currentPosition; }
+
+        public Position GetFinalPosition()
+        { return finalPosition; }
+
+        public void SetFinalPosition(Position finalPosition)
+        { this.finalPosition = finalPosition; }
+
+        public double GetVelocidad()
+        { return velocidad; }
         public void SetVelocidad(double velocidad)
-        // setter del atributo velocidad
         { this.velocidad = velocidad; }
 
+        public void Restart()
+        {
+            this.currentPosition = new Position(
+                initialPosition.GetX(),
+                initialPosition.GetY());
+        }
+
+        public double Distance(FlightPlan plan)
+        {
+            return currentPosition.Distancia(plan.GetCurrentPosition());
+        }
         public void Mover(double tiempo)
         // Mueve el vuelo a la posición correspondiente a viajar durante el tiempo que se recibe como parámetro
         {
@@ -79,6 +110,11 @@ namespace FlightLib
             if (this.EstaDestino())
                 Console.WriteLine("El vuelo ha llegado a su destino");
             Console.WriteLine("******************************");
+        }
+
+        public Boolean hasArrived()
+        {
+            return currentPosition.Distancia(finalPosition) < 0.01;
         }
     }
 }

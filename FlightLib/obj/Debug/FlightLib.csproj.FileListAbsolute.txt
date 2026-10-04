@@ -4,3 +4,9 @@ C:\Users\ACER\Downloads\1-PrimerProyecto(1)\PrimerProyecto\FlightLib\obj\Debug\F
 C:\Users\ACER\Downloads\1-PrimerProyecto(1)\PrimerProyecto\FlightLib\obj\Debug\FlightLib.csproj.CoreCompileInputs.cache
 C:\Users\ACER\Downloads\1-PrimerProyecto(1)\PrimerProyecto\FlightLib\obj\Debug\FlightLib.dll
 C:\Users\ACER\Downloads\1-PrimerProyecto(1)\PrimerProyecto\FlightLib\obj\Debug\FlightLib.pdb
+C:\Users\ACER\source\repos\SimuladorATC_INFO2\FlightLib\bin\Debug\FlightLib.dll
+C:\Users\ACER\source\repos\SimuladorATC_INFO2\FlightLib\bin\Debug\FlightLib.pdb
+C:\Users\ACER\source\repos\SimuladorATC_INFO2\FlightLib\obj\Debug\FlightLib.csproj.AssemblyReference.cache
+C:\Users\ACER\source\repos\SimuladorATC_INFO2\FlightLib\obj\Debug\FlightLib.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\SimuladorATC_INFO2\FlightLib\obj\Debug\FlightLib.dll
+C:\Users\ACER\source\repos\SimuladorATC_INFO2\FlightLib\obj\Debug\FlightLib.pdb
