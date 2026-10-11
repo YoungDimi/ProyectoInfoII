@@ -45,5 +45,36 @@ namespace Formularios
             securityDistance = formAddConfig.GetSecurityDistance();
             cycleTime = formAddConfig.GetCycleTime();
         }
+
+        private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+       
+
+        private void espacioAereoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // primero comprobamos que realmente se hayan introducido los datos de los dos flightplans
+            if (flightplan1 == null || flightplan2 == null)
+            {
+                MessageBox.Show("Introduce los planes de vuelo primero.");
+                return;
+            }
+
+            // ahora si, podemos abrir el nuevo form
+            FormEspacioAereo formEspacioAereo = new FormEspacioAereo();
+
+
+            //asi le pasamamos al formEspacioAereo la informacion
+            formEspacioAereo.SetFlightPlans(flightplan1, flightplan2); 
+            formEspacioAereo.SetConfig(securityDistance, cycleTime);
+            //ahora q ya ha recibido la info podemos abrir el formespacio aereo
+            formEspacioAereo.ShowDialog();
+
+
+            
+
+        }
     }
 }
