@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.autoTimer = new System.Windows.Forms.Timer(this.components);
+            this.startAutoButton = new System.Windows.Forms.Button();
+            this.stopAutoButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.avion1 = new System.Windows.Forms.PictureBox();
@@ -111,6 +115,34 @@
             this.moverButton.UseVisualStyleBackColor = true;
             this.moverButton.Click += new System.EventHandler(this.moverButton_Click);
             // 
+            // startAutoButton
+            // 
+            this.startAutoButton.Location = new System.Drawing.Point(20, 40);
+            this.startAutoButton.Name = "startAutoButton";
+            this.startAutoButton.Size = new System.Drawing.Size(120, 40);
+            this.startAutoButton.TabIndex = 4;
+            this.startAutoButton.Text = "Iniciar Auto";
+            this.startAutoButton.UseVisualStyleBackColor = true;
+            this.startAutoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.startAutoButton.Click += new System.EventHandler(this.StartAutoButton_Click);
+            // 
+            // stopAutoButton
+            // 
+            this.stopAutoButton.Location = new System.Drawing.Point(160, 40);
+            this.stopAutoButton.Name = "stopAutoButton";
+            this.stopAutoButton.Size = new System.Drawing.Size(120, 40);
+            this.stopAutoButton.TabIndex = 5;
+            this.stopAutoButton.Text = "Detener Auto";
+            this.stopAutoButton.UseVisualStyleBackColor = true;
+            this.stopAutoButton.Enabled = false;
+            this.stopAutoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.stopAutoButton.Click += new System.EventHandler(this.StopAutoButton_Click);
+            // 
+            // autoTimer
+            // 
+            this.autoTimer.Interval = 1000;
+            this.autoTimer.Tick += new System.EventHandler(this.AutoTimer_Tick);
+            // 
             // FormEspacioAereo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -118,10 +150,14 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1592, 1079);
             this.Controls.Add(this.moverButton);
+            this.Controls.Add(this.startAutoButton);
+            this.Controls.Add(this.stopAutoButton);
             this.Controls.Add(this.eje_y);
             this.Controls.Add(this.eje_x);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.startAutoButton.BringToFront();
+            this.stopAutoButton.BringToFront();
             this.Location = new System.Drawing.Point(300, 300);
             this.Name = "FormEspacioAereo";
             this.Text = "EspacioAereo";
@@ -143,5 +179,10 @@
         private System.Windows.Forms.Label eje_x;
         private System.Windows.Forms.Label eje_y;
         private System.Windows.Forms.Button moverButton;
+        private System.Windows.Forms.Timer autoTimer;
+        private System.Windows.Forms.Button startAutoButton;
+        private System.Windows.Forms.Button stopAutoButton;
+
     }
+
 }

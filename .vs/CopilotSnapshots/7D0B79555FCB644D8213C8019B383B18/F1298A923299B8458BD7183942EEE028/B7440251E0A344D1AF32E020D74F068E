@@ -1,0 +1,188 @@
+﻿namespace Formularios
+{
+    partial class FormEspacioAereo
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.autoTimer = new System.Windows.Forms.Timer(this.components);
+            this.startAutoButton = new System.Windows.Forms.Button();
+            this.stopAutoButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.avion1 = new System.Windows.Forms.PictureBox();
+            this.avion2 = new System.Windows.Forms.PictureBox();
+            this.eje_x = new System.Windows.Forms.Label();
+            this.eje_y = new System.Windows.Forms.Label();
+            this.moverButton = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avion1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avion2)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.avion2);
+            this.panel1.Controls.Add(this.avion1);
+            this.panel1.Location = new System.Drawing.Point(150, 150);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1100, 800);
+            this.panel1.TabIndex = 0;
+            this.panel1.BackColorChanged += new System.EventHandler(this.panel1_BackColorChanged);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(422, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(554, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ESPACIO AEREO. POSICIONES INCIALES";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // avion1
+            // 
+            this.avion1.BackColor = System.Drawing.Color.Fuchsia;
+            this.avion1.Location = new System.Drawing.Point(753, 231);
+            this.avion1.Name = "avion1";
+            this.avion1.Size = new System.Drawing.Size(20, 20);
+            this.avion1.TabIndex = 0;
+            this.avion1.TabStop = false;
+            this.avion1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // avion2
+            // 
+            this.avion2.BackColor = System.Drawing.Color.Yellow;
+            this.avion2.Location = new System.Drawing.Point(638, 286);
+            this.avion2.Name = "avion2";
+            this.avion2.Size = new System.Drawing.Size(20, 20);
+            this.avion2.TabIndex = 1;
+            this.avion2.TabStop = false;
+            // 
+            // eje_x
+            // 
+            this.eje_x.AutoSize = true;
+            this.eje_x.Location = new System.Drawing.Point(120, 554);
+            this.eje_x.Name = "eje_x";
+            this.eje_x.Size = new System.Drawing.Size(24, 25);
+            this.eje_x.TabIndex = 1;
+            this.eje_x.Text = "0";
+            this.eje_x.Click += new System.EventHandler(this.button);
+            // 
+            // eje_y
+            // 
+            this.eje_y.AutoSize = true;
+            this.eje_y.Location = new System.Drawing.Point(681, 964);
+            this.eje_y.Name = "eje_y";
+            this.eje_y.Size = new System.Drawing.Size(24, 25);
+            this.eje_y.TabIndex = 2;
+            this.eje_y.Text = "0";
+            // 
+            // moverButton
+            // 
+            this.moverButton.Location = new System.Drawing.Point(1356, 150);
+            this.moverButton.Name = "moverButton";
+            this.moverButton.Size = new System.Drawing.Size(155, 92);
+            this.moverButton.TabIndex = 3;
+            this.moverButton.Text = "Mover un ciclo";
+            this.moverButton.UseVisualStyleBackColor = true;
+            this.moverButton.Click += new System.EventHandler(this.moverButton_Click);
+            // 
+            // startAutoButton
+            // 
+            this.startAutoButton.Location = new System.Drawing.Point(20, 40);
+            this.startAutoButton.Name = "startAutoButton";
+            this.startAutoButton.Size = new System.Drawing.Size(120, 40);
+            this.startAutoButton.TabIndex = 4;
+            this.startAutoButton.Text = "Iniciar Auto";
+            this.startAutoButton.UseVisualStyleBackColor = true;
+            this.startAutoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.startAutoButton.Click += new System.EventHandler(this.StartAutoButton_Click);
+            // 
+            // stopAutoButton
+            // 
+            this.stopAutoButton.Location = new System.Drawing.Point(160, 40);
+            this.stopAutoButton.Name = "stopAutoButton";
+            this.stopAutoButton.Size = new System.Drawing.Size(120, 40);
+            this.stopAutoButton.TabIndex = 5;
+            this.stopAutoButton.Text = "Detener Auto";
+            this.stopAutoButton.UseVisualStyleBackColor = true;
+            this.stopAutoButton.Enabled = false;
+            this.stopAutoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.stopAutoButton.Click += new System.EventHandler(this.StopAutoButton_Click);
+            // 
+            // autoTimer
+            // 
+            this.autoTimer.Interval = 1000;
+            this.autoTimer.Tick += new System.EventHandler(this.AutoTimer_Tick);
+            // 
+            // FormEspacioAereo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(1592, 1079);
+            this.Controls.Add(this.moverButton);
+            this.Controls.Add(this.startAutoButton);
+            this.Controls.Add(this.stopAutoButton);
+            this.Controls.Add(this.eje_y);
+            this.Controls.Add(this.eje_x);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.startAutoButton.BringToFront();
+            this.stopAutoButton.BringToFront();
+            this.Location = new System.Drawing.Point(300, 300);
+            this.Name = "FormEspacioAereo";
+            this.Text = "EspacioAereo";
+            this.Load += new System.EventHandler(this.FormEspacioAereo_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avion1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avion2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox avion2;
+        private System.Windows.Forms.PictureBox avion1;
+        private System.Windows.Forms.Label eje_x;
+        private System.Windows.Forms.Label eje_y;
+        private System.Windows.Forms.Button moverButton;
+        private System.Windows.Forms.Timer autoTimer;
+        private System.Windows.Forms.Button startAutoButton;
+        private System.Windows.Forms.Button stopAutoButton;
+
+    }
+
+}
