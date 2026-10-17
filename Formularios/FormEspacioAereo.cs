@@ -23,6 +23,8 @@ namespace Formularios
             InitializeComponent();
         }
 
+        
+
         public void SetFlightPlans(FlightPlan p1, FlightPlan p2)
         {
             flightplan1 = p1;
@@ -134,6 +136,17 @@ namespace Formularios
 
             // Fuerza el repintado del panel para que las elipses se muevan junto con los aviones
             panel1.Invalidate();
+
+
+            // Si los aviones están a una distancia menor que la distancia de seguridad, mostramos un mensaje de advertencia
+            if (flightplan1 != null && flightplan2 != null)
+            {
+                double distancia = flightplan1.Distance(flightplan2);
+                if (distancia < securityDistance)
+                {
+                    MessageBox.Show("¡Advertencia! Los aviones están demasiado cerca. Distancia actual: " + distancia.ToString("F2"));
+                }
+            }
         }
 
         private void FormEspacioAereo_Load(object sender, EventArgs e)
@@ -190,6 +203,25 @@ namespace Formularios
             if (flightplan1 != null) flightplan1.Mover(cycleTime);
             if (flightplan2 != null) flightplan2.Mover(cycleTime);
             ColocarAviones();
+        }
+
+        private void DatosVuelosButton_Click(object sender, EventArgs e)
+        {
+            FormDatosVuelos formDatosVuelos = new FormDatosVuelos();
+            formDatosVuelos.SetFlightPlans(flightplan1, flightplan2);
+            formDatosVuelos.ShowDialog();
+        }
+
+        private void conflictosButton_Click(object sender, EventArgs e)
+        {
+            // Botón para comprobar si habrá conflicto entre los aviones en el futuro
+            Boolean hayConflicto = flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime);
+            
+            if (hayConflicto)
+                MessageBox.Show("¡Advertencia! Se predice un conflicto entre los aviones en el futuro.");
+            else
+                MessageBox.Show("No se predice ningún conflicto entre los aviones en el futuro.");
+
         }
     }
 }

@@ -99,6 +99,49 @@ namespace FlightLib
             
             return conflicto;
         }
+        public Boolean PredecirConflicto(FlightPlan b, double distanciaSeguridad, double cycleTime)
+        {
+            if (cycleTime <= 0)
+                return false;
+            // Si ambos vuelos están parados, calculamos el confilicto en la posición actual
+            if (velocidad <= 0 && b.GetVelocidad() <= 0)
+                return Conflicto(b, distanciaSeguridad);
+
+            // Creamos copias de los planes de vuelo en la posición actual para simular el movimiento
+            FlightPlan a1 = new FlightPlan(
+                id, 
+                currentPosition.GetX(),
+                currentPosition.GetY(), 
+                finalPosition.GetX(), 
+                finalPosition.GetY(), 
+                velocidad);
+
+            FlightPlan b1 = new FlightPlan(
+                b.GetId(),
+                b.GetCurrentPosition().GetX(),
+                b.GetCurrentPosition().GetY(),
+                b.GetFinalPosition().GetX(),
+                b.GetFinalPosition().GetY(),
+                b.GetVelocidad());
+
+            // Comprobamos si hay conflicto en la posición actual
+            if (a1.Conflicto(b1, distanciaSeguridad))
+                return true;
+
+            // Simulamos el movimiento de ambos vuelos hasta que uno de ellos llegue a su destino o se acabe el tiempo de simulación
+            int pasos = 0;
+            int maxPasos = 1000000;
+            while ((!a1.EstaDestino() || !b1.EstaDestino()) && pasos < maxPasos)
+            {
+                a1.Mover(cycleTime);
+                b1.Mover(cycleTime);
+                if (a1.Conflicto(b1, distanciaSeguridad))
+                    return true;
+                pasos++;
+            }
+            
+            return false;
+        }
         public void EscribeConsola()
         // escribe en consola los datos del plan de vuelo
         {
