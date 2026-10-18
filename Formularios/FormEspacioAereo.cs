@@ -95,6 +95,18 @@ namespace Formularios
 
                     e.Graphics.DrawEllipse(Pens.Blue, izquierda2, top2, diametro2, diametro2);
                 }
+                // Fase 6: trayectoria de cada vuelo, del origen al destino
+                Pen myPen = new Pen(Color.Red);
+
+                Point origen1 = new Point((int)(centroX + flightplan1.GetInitialPosition().GetX()), (int)(centroY - flightplan1.GetInitialPosition().GetY()));
+                Point destino1 = new Point((int)(centroX + flightplan1.GetFinalPosition().GetX()), (int)(centroY - flightplan1.GetFinalPosition().GetY()));
+                e.Graphics.DrawLine(myPen, origen1, destino1);
+
+                Point origen2 = new Point((int)(centroX + flightplan2.GetInitialPosition().GetX()), (int)(centroY - flightplan2.GetInitialPosition().GetY()));
+                Point destino2 = new Point((int)(centroX + flightplan2.GetFinalPosition().GetX()), (int)(centroY - flightplan2.GetFinalPosition().GetY()));
+                e.Graphics.DrawLine(myPen, origen2, destino2);
+
+                myPen.Dispose();
             }
             catch (Exception)
             {
@@ -151,6 +163,13 @@ namespace Formularios
 
         private void FormEspacioAereo_Load(object sender, EventArgs e)
         {
+            // Guardamos en cada avión su plan de vuelo, para saber cuál es al hacer clic
+            avion1.Tag = flightplan1;
+            avion2.Tag = flightplan2;
+
+            // Al hacer clic en un avión se ejecuta FlightInformation (fase 5)
+            avion1.Click += FlightInformation;
+            avion2.Click += FlightInformation;
             ColocarAviones();
             // colocamos aviones en posicion incial al abrir el form
 
@@ -180,7 +199,16 @@ namespace Formularios
             ColocarAviones();
             // colocamos aviones en la nueva posicion
         }
-
+        private void FlightInformation(object sender, EventArgs e)
+        {
+            // Se ejecuta al hacer clic en un avión.
+            // El sender es el PictureBox (avión) en el que se ha hecho clic
+            PictureBox avion = (PictureBox)sender;
+            FlightPlan flightplan = (FlightPlan)avion.Tag; // recuperamos el vuelo guardado en el Tag
+            FlightInfo flightInfoForm = new FlightInfo();
+            flightInfoForm.SetFlightPlan(flightplan);
+            flightInfoForm.ShowDialog();
+        }
         private void StartAutoButton_Click(object sender, EventArgs e)
         {
             // asegura que existen flightplans configurados

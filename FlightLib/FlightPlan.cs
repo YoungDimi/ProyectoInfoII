@@ -36,6 +36,9 @@ namespace FlightLib
         public Position GetCurrentPosition()
         { return currentPosition; }
 
+        public Position GetInitialPosition()
+        { return initialPosition; }
+
         public void SetCurrentPosition(Position currentPosition)
         { this.currentPosition = currentPosition; }
 
