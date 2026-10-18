@@ -170,11 +170,49 @@ namespace Formularios
             // Al hacer clic en un avión se ejecuta FlightInformation (fase 5)
             avion1.Click += FlightInformation;
             avion2.Click += FlightInformation;
+            // Fase 11: antes de empezar, comprobamos si habrá conflicto
+            if (flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime))
+            {
+                DialogResult respuesta = MessageBox.Show(
+                    "Los vuelos entrarán en conflicto. ¿Quieres resolverlo automáticamente?",
+                    "Conflicto detectado",
+                    MessageBoxButtons.YesNo);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    ResolverConflicto();
+                }
+            }
             ColocarAviones();
             // colocamos aviones en posicion incial al abrir el form
 
         }
+        // Fase 11: cambia la velocidad de un vuelo para evitar el conflicto
+        private void ResolverConflicto()
+        {
+            double velocidadOriginal = flightplan2.GetVelocidad();
+            double nuevaVelocidad = velocidadOriginal;
 
+            // Bajamos la velocidad del avión 2 un 10% cada vez, mientras siga habiendo conflicto
+            // (con un límite: no bajamos de un 10% de su velocidad original)
+            while (flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime)
+                   && nuevaVelocidad > velocidadOriginal * 0.1)
+            {
+                nuevaVelocidad = nuevaVelocidad * 0.9;
+                flightplan2.SetVelocidad(nuevaVelocidad);
+            }
+
+            // Comprobamos si lo hemos conseguido
+            if (flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime))
+            {
+                flightplan2.SetVelocidad(velocidadOriginal); // no se ha podido: dejamos la velocidad como estaba
+                MessageBox.Show("No se ha podido resolver el conflicto cambiando la velocidad.");
+            }
+            else
+            {
+                MessageBox.Show("Conflicto resuelto. Nueva velocidad del vuelo " + flightplan2.GetId() + ": " + nuevaVelocidad.ToString("F2"));
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 

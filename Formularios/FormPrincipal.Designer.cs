@@ -47,13 +47,14 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.opcionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 46);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,39 +65,39 @@
             this.configuraciónDelSimuladorToolStripMenuItem,
             this.espacioAereoToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 36);
             this.opcionesToolStripMenuItem.Text = "Opciones";
             this.opcionesToolStripMenuItem.Click += new System.EventHandler(this.opcionesToolStripMenuItem_Click);
             // 
             // introducirPlanesDeVueloToolStripMenuItem
             // 
             this.introducirPlanesDeVueloToolStripMenuItem.Name = "introducirPlanesDeVueloToolStripMenuItem";
-            this.introducirPlanesDeVueloToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.introducirPlanesDeVueloToolStripMenuItem.Size = new System.Drawing.Size(449, 44);
             this.introducirPlanesDeVueloToolStripMenuItem.Text = "Introducir planes de vuelo";
             this.introducirPlanesDeVueloToolStripMenuItem.Click += new System.EventHandler(this.introducirPlanesDeVueloToolStripMenuItem_Click);
             // 
             // configuraciónDelSimuladorToolStripMenuItem
             // 
             this.configuraciónDelSimuladorToolStripMenuItem.Name = "configuraciónDelSimuladorToolStripMenuItem";
-            this.configuraciónDelSimuladorToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.configuraciónDelSimuladorToolStripMenuItem.Size = new System.Drawing.Size(449, 44);
             this.configuraciónDelSimuladorToolStripMenuItem.Text = "Configuración del simulador";
             this.configuraciónDelSimuladorToolStripMenuItem.Click += new System.EventHandler(this.configuraciónDelSimuladorToolStripMenuItem_Click);
             // 
             // espacioAereoToolStripMenuItem
             // 
             this.espacioAereoToolStripMenuItem.Name = "espacioAereoToolStripMenuItem";
-            this.espacioAereoToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.espacioAereoToolStripMenuItem.Size = new System.Drawing.Size(449, 44);
             this.espacioAereoToolStripMenuItem.Text = "Espacio Aereo";
             this.espacioAereoToolStripMenuItem.Click += new System.EventHandler(this.espacioAereoToolStripMenuItem_Click);
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.ClientSize = new System.Drawing.Size(1200, 705);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Principal";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Form1_Load);
