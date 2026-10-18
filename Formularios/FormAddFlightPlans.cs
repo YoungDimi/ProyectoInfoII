@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FlightLib;
+using System;
 using System.Windows.Forms;
-using FlightLib;
 
 namespace Formularios
 {
@@ -33,10 +26,11 @@ namespace Formularios
         {
             try
             {
-                /* Convertimos los valores de los TextBox a los tipos de datos correspondientes 
-                 para cada FlightPlan. */
+                // convertimos los valores de los TextBox a los tipos de datos correspondientes 
+  
+          
 
-                // FlightPlan 1
+                // flightPlan 1
                 string id1 = fp1_id.Text;
                 string[] initialPosition1 = fp1_initialPos.Text.Split(' ');
                 if (initialPosition1.Length != 2)
@@ -58,7 +52,7 @@ namespace Formularios
 
                 double velocidad1 = Convert.ToDouble(fp1_Velocity.Text);
 
-                // FlightPlan 2
+                //flightPlan 2
                 string id2 = fp2_id.Text;
                 string[] initialPosition2 = fp2_initialPos.Text.Split(' ');
                 if (initialPosition2.Length != 2)
@@ -81,11 +75,11 @@ namespace Formularios
                 double velocidad2 = Convert.ToDouble(fp2_Velocity.Text);
 
 
-                // Inicializamos los FlightPlans con los valores obtenidos de los TextBox.
+                // inicializamos los flightplans con los valores obtenidos de los textboxz
                 flightplan1 = new FlightPlan(id1, cpx1, cpy1, fpx1, fpy1, velocidad1);
                 flightplan2 = new FlightPlan(id2, cpx2, cpy2, fpx2, fpy2, velocidad2);
 
-                // Cerramos el formulario emergente.
+                //cerramos el formulario
                 this.Close();
             }
             catch (FormatException)
@@ -94,29 +88,10 @@ namespace Formularios
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+        
 
-        }
+        
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormAddFlightPlans_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

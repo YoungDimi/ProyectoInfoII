@@ -1,12 +1,5 @@
 ﻿using FlightLib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Formularios
@@ -20,11 +13,6 @@ namespace Formularios
         public Principal()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void introducirPlanesDeVueloToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,11 +34,6 @@ namespace Formularios
             cycleTime = formAddConfig.GetCycleTime();
         }
 
-        private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
        
 
         private void espacioAereoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,7 +44,11 @@ namespace Formularios
                 MessageBox.Show("Introduce los planes de vuelo primero.");
                 return;
             }
-
+            if (cycleTime <= 0)
+            {
+                MessageBox.Show("Configura primero el simulador (tiempo de ciclo y distancia de seguridad).");
+                return;
+            }
             // ahora si, podemos abrir el nuevo form
             FormEspacioAereo formEspacioAereo = new FormEspacioAereo();
 

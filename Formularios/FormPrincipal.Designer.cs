@@ -54,7 +54,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 48);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,9 +65,8 @@
             this.configuraciónDelSimuladorToolStripMenuItem,
             this.espacioAereoToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 36);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 38);
             this.opcionesToolStripMenuItem.Text = "Opciones";
-            this.opcionesToolStripMenuItem.Click += new System.EventHandler(this.opcionesToolStripMenuItem_Click);
             // 
             // introducirPlanesDeVueloToolStripMenuItem
             // 
@@ -100,7 +99,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Principal";
             this.Text = "Principal";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

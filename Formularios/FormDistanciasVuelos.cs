@@ -1,12 +1,5 @@
 ﻿using FlightLib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Formularios
@@ -28,10 +21,10 @@ namespace Formularios
         }
         private void FormDistanciasVuelos_Load(object sender, EventArgs e)
         {
-            // Mostramos los IDs de los vuelos en el label correspondiente
+            // mostramos los IDs de los vuelos en su label 
             IDsVuelosLabel.Text = $"{clickedFlightPlan.GetId()} ⟶ {otherFlightPlan.GetId()}";
 
-            // Calculamos y mostramos la distancia entre los dos vuelos
+            // calculamos y mostramos la distancia entre los dos vuelos
             double distancia = clickedFlightPlan.Distance(otherFlightPlan);
             DistanciaLabel.Text = $"Distancia: {Math.Round(distancia, 3)}";
 

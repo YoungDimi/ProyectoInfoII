@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Formularios
@@ -25,9 +18,8 @@ namespace Formularios
         }
         public void SetSecurityDistance(double value)
         {
-            /* Método para asignar el valor de la distancia de seguridad y actualizar el TextBox correspondiente 
-             para reflejar el valor actual en la interfaz de usuario.
-             */
+            // asignar el valor de la distancia de seguridad y actualizar el TextBox correspondiente 
+             
             securityDistanceVal = value;
             securityDistance.Text = value.ToString();
         }
@@ -37,9 +29,8 @@ namespace Formularios
         }
         public void SetCycleTime(int value)
         {
-            /* Método para asignar el valor del tiempo de ciclo y actualizar el TextBox correspondiente 
-             para reflejar el valor actual en la interfaz de usuario.
-             */
+            // método para asignar el valor del tiempo de ciclo y actualizar el TextBox correspondiente 
+             
             cycleTimeVal = value;
             cycleTime.Text = value.ToString();
         }
@@ -72,10 +63,6 @@ namespace Formularios
                 MessageBox.Show("Por favor, ingrese valores numéricos válidos.");
                 return;
             }
-        }
-
-        private void cycleTime_TextChanged(object sender, EventArgs e)
-        {
         }
     }
 }

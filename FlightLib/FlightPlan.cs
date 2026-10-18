@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FlightLib
 {
     public class FlightPlan
     {
-        // Atributos
+      
 
         string id; // identificador
         Position initialPosition;
@@ -16,7 +12,7 @@ namespace FlightLib
         Position finalPosition; // posicion final
         double velocidad;
 
-        // Constructures
+        
         public FlightPlan(string id, double cpx, double cpy, double fpx, double fpy, double velocidad)
         {
             this.id = id;
@@ -26,7 +22,6 @@ namespace FlightLib
             this.velocidad = velocidad;
         }
 
-        // Metodos
         public string GetId()
         { return id; }
 
@@ -65,17 +60,17 @@ namespace FlightLib
             return currentPosition.Distancia(plan.GetCurrentPosition());
         }
         public void Mover(double tiempo)
-        // Mueve el vuelo a la posición correspondiente a viajar durante el tiempo que se recibe como parámetro
+        // mueve el vuelo a la posición correspondiente a viajar durante el tiempo que se recibe como parámetro
         {
-            //Calculamos la distancia recorrida en el tiempo dado
+            //calculamos la distancia recorrida en el tiempo dado
             double distancia = tiempo * this.velocidad / 60;
 
-            //Calculamos las razones trigonométricas
+            //calculamos las razones trigonométricas
             double hipotenusa = Math.Sqrt((finalPosition.GetX() - currentPosition.GetX()) * (finalPosition.GetX() - currentPosition.GetX()) + (finalPosition.GetY() - currentPosition.GetY()) * (finalPosition.GetY() - currentPosition.GetY()));
             double coseno = (finalPosition.GetX() - currentPosition.GetX()) / hipotenusa;
             double seno = (finalPosition.GetY() - currentPosition.GetY()) / hipotenusa;
 
-            //Caculamos la nueva posición del vuelo
+            //caculamos la nueva posición del vuelo
             double x = currentPosition.GetX() + distancia * coseno;
             double y = currentPosition.GetY() + distancia * seno;
 
@@ -85,13 +80,7 @@ namespace FlightLib
             else
                 currentPosition = finalPosition;
         }
-        public Boolean EstaDestino() 
-        { 
-            bool resultado = false;
-            if (currentPosition == finalPosition)
-                resultado = true;
-            return resultado;
-        } 
+        
 
         public Boolean Conflicto(FlightPlan b, double distanciaSeguridad)
         {
@@ -106,11 +95,11 @@ namespace FlightLib
         {
             if (cycleTime <= 0)
                 return false;
-            // Si ambos vuelos están parados, calculamos el confilicto en la posición actual
+            // si ambos vuelos están parados, calculamos el confilicto en la posición actual
             if (velocidad <= 0 && b.GetVelocidad() <= 0)
                 return Conflicto(b, distanciaSeguridad);
 
-            // Creamos copias de los planes de vuelo en la posición actual para simular el movimiento
+            // creamos copias de los planes de vuelo en la posición actual para simular el movimiento
             FlightPlan a1 = new FlightPlan(
                 id, 
                 currentPosition.GetX(),
@@ -127,14 +116,14 @@ namespace FlightLib
                 b.GetFinalPosition().GetY(),
                 b.GetVelocidad());
 
-            // Comprobamos si hay conflicto en la posición actual
+            // comprobamos si hay conflicto en la posición actual
             if (a1.Conflicto(b1, distanciaSeguridad))
                 return true;
 
-            // Simulamos el movimiento de ambos vuelos hasta que uno de ellos llegue a su destino o se acabe el tiempo de simulación
+            // simulamos el movimiento de ambos vuelos hasta que uno de ellos llegue a su destino o se acabe el tiempo de simulación
             int pasos = 0;
             int maxPasos = 1000000;
-            while ((!a1.EstaDestino() || !b1.EstaDestino()) && pasos < maxPasos)
+            while ((!a1.HasArrived() || !b1.HasArrived()) && pasos < maxPasos)
             {
                 a1.Mover(cycleTime);
                 b1.Mover(cycleTime);
@@ -148,17 +137,17 @@ namespace FlightLib
         public void EscribeConsola()
         // escribe en consola los datos del plan de vuelo
         {
-            Console.WriteLine("******************************");
+            
             Console.WriteLine("Datos del vuelo: ");
             Console.WriteLine("Identificador: {0}", id);
             Console.WriteLine("Velocidad: {0:F2}", velocidad);
             Console.WriteLine("Posición actual: ({0:F2},{1:F2})", currentPosition.GetX(), currentPosition.GetY());
-            if (this.EstaDestino())
+            if (this.HasArrived())
                 Console.WriteLine("El vuelo ha llegado a su destino");
-            Console.WriteLine("******************************");
+            
         }
 
-        public Boolean hasArrived()
+        public Boolean HasArrived()
         {
             return currentPosition.Distancia(finalPosition) < 0.01;
         }

@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FlightLib
 {
     public class Position
     {
-        // Atributos
+       
         double x; // coordenada X (2D)
         double y; // coordenada Y (2D)
 
-        // Constructores
+        
 
         public Position(double x, double y)
         {
@@ -20,7 +16,7 @@ namespace FlightLib
             this.y = y;
         }
 
-        // Metodos
+        
 
         public double GetX()
         // getter del atributo x
