@@ -39,9 +39,7 @@ namespace Formularios
             int centroX = panel1.Width / 2;
             int centroY = panel1.Height / 2;
 
-            // ejes X e Y, que se cruzan en el centro del panel
-            e.Graphics.DrawLine(Pens.Black, 0, centroY, panel1.Width, centroY);
-            e.Graphics.DrawLine(Pens.Black, centroX, 0, centroX, panel1.Height);
+ 
 
             // linea de trayectoria de cada vuelo, del origen al destino
             Pen myPen = new Pen(Color.Gray);
@@ -58,21 +56,39 @@ namespace Formularios
 
             // círculo de seguridad alrededor de cada avión.
             // draw elipse usa la esquina de arriba a la izquierda, por eso le restamos el radio
+            // para cada circulo comprobamos si hay conflicto: si lo hay, pintamos el fondo de ambas elipses
+            Boolean conflicto = flightplan1.Distance(flightplan2) < 2 * securityDistance;
             float radio = (float)securityDistance;
 
             float esquinaX1 = (float)(centroX + flightplan1.GetCurrentPosition().GetX() - radio);
             float esquinaY1 = (float)(centroY - flightplan1.GetCurrentPosition().GetY() - radio);
-            e.Graphics.DrawEllipse(Pens.Red, esquinaX1, esquinaY1, 2 * radio, 2 * radio);
-
+           
             float esquinaX2 = (float)(centroX + flightplan2.GetCurrentPosition().GetX() - radio);
             float esquinaY2 = (float)(centroY - flightplan2.GetCurrentPosition().GetY() - radio);
+            
+
+            if (conflicto)
+            {
+                SolidBrush relleno = new SolidBrush(Color.FromArgb(70, Color.Red));
+                e.Graphics.FillEllipse(relleno, esquinaX1, esquinaY1, 2 * radio, 2 * radio);
+                e.Graphics.FillEllipse(relleno, esquinaX2, esquinaY2, 2 * radio, 2 * radio);
+                relleno.Dispose();
+            }
+
+            e.Graphics.DrawEllipse(Pens.Red, esquinaX1, esquinaY1, 2 * radio, 2 * radio);
             e.Graphics.DrawEllipse(Pens.Blue, esquinaX2, esquinaY2, 2 * radio, 2 * radio);
+
+
+
         }
+        
 
       
 
         private void ColocarAviones()
         {
+            int centroX = panel1.Width / 2;
+            int centroY = panel1.Height / 2;
             // AVION 1
 
             //se ejecuta al abrir el formulario y cada vez que se mueven los aviones
@@ -107,15 +123,14 @@ namespace Formularios
             panel1.Invalidate();
 
 
-            // si se acercan más que la distancia de seguridad, salta un aviso
-            // paramos antes la simulación automática porque sino el timer seguiria
+            // si se acercan más que la distancia de seguridad
+            // paramos la simulación automática porque sino el timer seguiria
             double distancia = flightplan1.Distance(flightplan2);
-            if (distancia < securityDistance)
+            if (distancia < securityDistance * 2)
             {
                 autoTimer.Stop();
                 startAutoButton.Enabled = true;
                 stopAutoButton.Enabled = false;
-                MessageBox.Show("¡Cuidado! Los aviones están demasiado cerca. Distancia actual: " + distancia.ToString("F2"));
             }
         }
 
@@ -248,6 +263,13 @@ namespace Formularios
         private void avion2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonReiniciar_Click(object sender, EventArgs e)
+        {
+            flightplan1.Reiniciar();
+            flightplan2.Reiniciar();
+            ColocarAviones();
         }
     }
 }
