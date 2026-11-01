@@ -49,6 +49,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.ejemploButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +65,7 @@
             // 
             // addFlightPlansButton
             // 
-            this.addFlightPlansButton.Location = new System.Drawing.Point(494, 580);
+            this.addFlightPlansButton.Location = new System.Drawing.Point(613, 580);
             this.addFlightPlansButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addFlightPlansButton.Name = "addFlightPlansButton";
             this.addFlightPlansButton.Size = new System.Drawing.Size(183, 64);
@@ -252,11 +253,22 @@
             this.label12.Text = "- ID: texto   Posición inicial: x_inicial y_inicial   Posición final: x_final y_f" +
     "inal   Velocidad: número";
             // 
+            // ejemploButton
+            // 
+            this.ejemploButton.Location = new System.Drawing.Point(398, 580);
+            this.ejemploButton.Name = "ejemploButton";
+            this.ejemploButton.Size = new System.Drawing.Size(182, 63);
+            this.ejemploButton.TabIndex = 28;
+            this.ejemploButton.Text = "Auto-rellenar ejemplo";
+            this.ejemploButton.UseVisualStyleBackColor = true;
+            this.ejemploButton.Click += new System.EventHandler(this.ejemploButton_Click);
+            // 
             // FormAddFlightPlans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 678);
+            this.Controls.Add(this.ejemploButton);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.fp2_Velocity);
@@ -308,5 +320,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button ejemploButton;
     }
 }

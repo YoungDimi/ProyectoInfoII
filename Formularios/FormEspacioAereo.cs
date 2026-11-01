@@ -271,5 +271,30 @@ namespace Formularios
             flightplan2.Reiniciar();
             ColocarAviones();
         }
+
+        private void cambiarVelocidadesButton_Click(object sender, EventArgs e)
+        {
+            
+            autoTimer.Stop();
+            startAutoButton.Enabled = true;
+            stopAutoButton.Enabled = false;
+
+            FormCambiarVelocidades formVelocidades = new FormCambiarVelocidades();
+            formVelocidades.SetFlightPlans(flightplan1, flightplan2);
+            formVelocidades.ShowDialog();
+
+            
+            if (formVelocidades.GetCambiado())
+            {
+                flightplan1.Reiniciar();
+                flightplan2.Reiniciar();
+                ColocarAviones();
+
+                if (flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime))
+                    MessageBox.Show("Con estas velocidades los vuelos siguen entrando en conflicto.");
+                else
+                    MessageBox.Show("Con estas velocidades ya no hay conflicto.");
+            }
+        }
     }
 }

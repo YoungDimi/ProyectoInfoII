@@ -48,13 +48,7 @@ namespace FlightLib
         public void SetVelocidad(double velocidad)
         { this.velocidad = velocidad; }
 
-        public void Restart()
-        {
-            this.currentPosition = new Position(
-                initialPosition.GetX(),
-                initialPosition.GetY());
-        }
-
+     
         public double Distance(FlightPlan plan)
         {
             return currentPosition.Distancia(plan.GetCurrentPosition());
@@ -81,6 +75,16 @@ namespace FlightLib
                 currentPosition = finalPosition;
         }
 
+        // dice si AHORA MISMO hay conflicto: los círculos de seguridad se tocan
+        public Boolean Conflicto(FlightPlan b, double distanciaSeguridad)
+        {
+            bool conflicto = false;
+
+            if (this.currentPosition.Distancia(b.currentPosition) < 2 * distanciaSeguridad)
+                conflicto = true;
+
+            return conflicto;
+        }
 
         public Boolean PredecirConflicto(FlightPlan b, double distanciaSeguridad, double tiempoCiclo)
         {

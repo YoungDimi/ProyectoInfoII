@@ -25,12 +25,7 @@ namespace Formularios
         private void addFlightPlansButton_Click(object sender, EventArgs e)
         {
             try
-            {
-                // convertimos los valores de los TextBox a los tipos de datos correspondientes 
-  
-          
-
-                // flightPlan 1
+            { 
                 string id1 = fp1_id.Text;
                 string[] initialPosition1 = fp1_initialPos.Text.Split(' ');
                 if (initialPosition1.Length != 2)
@@ -52,7 +47,7 @@ namespace Formularios
 
                 double velocidad1 = Convert.ToDouble(fp1_Velocity.Text);
 
-                //flightPlan 2
+                
                 string id2 = fp2_id.Text;
                 string[] initialPosition2 = fp2_initialPos.Text.Split(' ');
                 if (initialPosition2.Length != 2)
@@ -75,11 +70,11 @@ namespace Formularios
                 double velocidad2 = Convert.ToDouble(fp2_Velocity.Text);
 
 
-                // inicializamos los flightplans con los valores obtenidos de los textboxz
+                
                 flightplan1 = new FlightPlan(id1, cpx1, cpy1, fpx1, fpy1, velocidad1);
                 flightplan2 = new FlightPlan(id2, cpx2, cpy2, fpx2, fpy2, velocidad2);
 
-                //cerramos el formulario
+                
                 this.Close();
             }
             catch (FormatException)
@@ -88,10 +83,18 @@ namespace Formularios
             }
         }
 
-        
+        private void ejemploButton_Click(object sender, EventArgs e)
+        {
+            // datos de ejemplo: dos vuelos que se cruzan en el (0,0) a la vez, para provocar un conflicto
+            fp1_id.Text = "IB101";
+            fp1_initialPos.Text = "-150 0";
+            fp1_finalPos.Text = "150 0";
+            fp1_Velocity.Text = "300";
 
-        
-
-        
+            fp2_id.Text = "VY202";
+            fp2_initialPos.Text = "0 -150";
+            fp2_finalPos.Text = "0 150";
+            fp2_Velocity.Text = "300";
+        }
     }
 }

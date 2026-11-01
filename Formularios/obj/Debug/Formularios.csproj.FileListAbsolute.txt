@@ -36,3 +36,4 @@ C:\Users\ACER\source\repos\SimuladorATC_INFO2\Formularios\obj\Debug\Formularios.
 C:\Users\ACER\source\repos\SimuladorATC_INFO2\Formularios\obj\Debug\Formular.9034CDC0.Up2Date
 C:\Users\ACER\source\repos\SimuladorATC_INFO2\Formularios\obj\Debug\Formularios.exe
 C:\Users\ACER\source\repos\SimuladorATC_INFO2\Formularios\obj\Debug\Formularios.pdb
+C:\Users\palo\source\repos\ProyectoInfoII\Formularios\obj\Debug\Formularios.FormCambiarVelocidades.resources
