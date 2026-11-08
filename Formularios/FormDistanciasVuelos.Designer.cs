@@ -29,39 +29,41 @@
         private void InitializeComponent()
         {
             this.IDsVuelosLabel = new System.Windows.Forms.Label();
-            this.DistanciaLabel = new System.Windows.Forms.Label();
+            this.tablaDistancias = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDistancias)).BeginInit();
             this.SuspendLayout();
             // 
             // IDsVuelosLabel
             // 
             this.IDsVuelosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDsVuelosLabel.Location = new System.Drawing.Point(48, 20);
+            this.IDsVuelosLabel.Location = new System.Drawing.Point(48, 25);
             this.IDsVuelosLabel.Name = "IDsVuelosLabel";
             this.IDsVuelosLabel.Size = new System.Drawing.Size(335, 38);
             this.IDsVuelosLabel.TabIndex = 0;
-            this.IDsVuelosLabel.Text = "IDs de vuelos";
+            this.IDsVuelosLabel.Text = "ID Vuelo";
             this.IDsVuelosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DistanciaLabel
+            // tablaDistancias
             // 
-            this.DistanciaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DistanciaLabel.Location = new System.Drawing.Point(27, 78);
-            this.DistanciaLabel.Name = "DistanciaLabel";
-            this.DistanciaLabel.Size = new System.Drawing.Size(368, 24);
-            this.DistanciaLabel.TabIndex = 1;
-            this.DistanciaLabel.Text = "La distancia entre los dos vuelos es:";
-            this.DistanciaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tablaDistancias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaDistancias.Location = new System.Drawing.Point(37, 92);
+            this.tablaDistancias.Name = "tablaDistancias";
+            this.tablaDistancias.RowHeadersWidth = 51;
+            this.tablaDistancias.RowTemplate.Height = 24;
+            this.tablaDistancias.Size = new System.Drawing.Size(346, 276);
+            this.tablaDistancias.TabIndex = 1;
             // 
             // FormDistanciasVuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 141);
-            this.Controls.Add(this.DistanciaLabel);
+            this.ClientSize = new System.Drawing.Size(430, 409);
+            this.Controls.Add(this.tablaDistancias);
             this.Controls.Add(this.IDsVuelosLabel);
             this.Name = "FormDistanciasVuelos";
             this.Text = "FormDistanciasVuelos";
             this.Load += new System.EventHandler(this.FormDistanciasVuelos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDistancias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -69,6 +71,6 @@
         #endregion
 
         private System.Windows.Forms.Label IDsVuelosLabel;
-        private System.Windows.Forms.Label DistanciaLabel;
+        private System.Windows.Forms.DataGridView tablaDistancias;
     }
 }

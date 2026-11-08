@@ -7,15 +7,17 @@ namespace FlightLib
       
 
         string id; // identificador
+        string compañia; // compañia aerea
         Position initialPosition;
         Position currentPosition; // posicion actual
         Position finalPosition; // posicion final
         double velocidad;
 
         
-        public FlightPlan(string id, double cpx, double cpy, double fpx, double fpy, double velocidad)
+        public FlightPlan(string id, string compañia, double cpx, double cpy, double fpx, double fpy, double velocidad)
         {
             this.id = id;
+            this.compañia = compañia;
             this.initialPosition = new Position(cpx, cpy);
             this.currentPosition = new Position(cpx, cpy);
             this.finalPosition = new Position(fpx, fpy);
@@ -27,6 +29,10 @@ namespace FlightLib
 
         public void SetId(string id)
         { this.id = id; }
+        public string GetCompañia()
+        { return compañia; }
+        public void SetCompañia(string compañia)
+        { this.compañia = compañia; }
 
         public Position GetCurrentPosition()
         { return currentPosition; }
@@ -152,6 +158,33 @@ namespace FlightLib
             else
                 return false;
 
+        }
+
+        // Si hay conflicto, cambia la velocidad del vuelo b (pasado como parámetro) para evitar el conflicto
+        public bool ResolverConflicto(FlightPlan b, double securityDistance, double cycleTime)
+        {
+            double velocidadOriginal = b.GetVelocidad();
+            double nuevaVelocidad = velocidadOriginal;
+
+            //bajamos la velocidad del avión b un 10% cada vez, mientras siga habiendo conflicto
+            // con un límite: el10% de su velocidad original, por si el conflicto no tiene solicion
+            while (this.PredecirConflicto(b, securityDistance, cycleTime)
+                   && nuevaVelocidad > velocidadOriginal * 0.1)
+            {
+                nuevaVelocidad = nuevaVelocidad * 0.9;
+                b.SetVelocidad(nuevaVelocidad);
+            }
+
+            // comprobamos si lo hemos conseguido
+            if (this.PredecirConflicto(b, securityDistance, cycleTime))
+            {
+                b.SetVelocidad(velocidadOriginal); // no se ha podido: dejamos la velocidad como estaba
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         public void EscribeConsola()
         // escribe en consola los datos del plan de vuelo

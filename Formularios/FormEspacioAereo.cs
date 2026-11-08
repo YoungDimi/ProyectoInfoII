@@ -1,5 +1,6 @@
 ﻿using FlightLib;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,10 +8,13 @@ namespace Formularios
 {
     public partial class FormEspacioAereo : Form
     {
-        FlightPlan flightplan1;
-        FlightPlan flightplan2;
+        FlightPlanList lista; // lista de planes de vuelo
+        List<PictureBox> aviones = new List<PictureBox>(); // un picturebox por vuelo, con el mismo orden que la lista
         double securityDistance;
         int cycleTime;
+
+        // color de cada vuelo (si hay más vuelos que colores, se repiten)
+        Color[] colores = { Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Purple };
 
         public FormEspacioAereo()
         {
@@ -18,14 +22,13 @@ namespace Formularios
         }
 
         
-
-        public void SetFlightPlans(FlightPlan p1, FlightPlan p2)
+        // Recibe la lista de vuelos desde Principal
+        public void SetFlightPlans(FlightPlanList l)
         {
-            flightplan1 = p1;
-            flightplan2 = p2;
-            // asi guardamos la informacion que recibimos de principal
+            lista = l;
         }
 
+        // Recibe la configuración desde Principal
         public void SetConfig(double sd , int ct )
         {
             securityDistance = sd;
@@ -33,100 +36,108 @@ namespace Formularios
             // asi guardamos la informacion que recibimos de principal
         }
 
+        // Crea un PictureBox por vuelo. avion1 se usa como plantilla para el resto
+        private void CrearAviones()
+        {
+            for (int i = 0; i < lista.GetNumber(); i++)
+            {
+                PictureBox pb;
+                if (i == 0)
+                {
+                    pb = avion1;
+                }
+                else
+                {
+                    pb = new PictureBox();
+                    pb.Image = avion1.Image;
+                    pb.Size = avion1.Size;
+                    pb.SizeMode = avion1.SizeMode;
+                    pb.BackColor = avion1.BackColor;
+                    panel1.Controls.Add(pb);
+                }
+                pb.Tag = lista.GetFlightPlan(i); // guardamos el vuelo para FlightInformation
+                pb.Click += FlightInformation;
+                aviones.Add(pb);
+            }
+        }
 
+        // Dibuja trayectorias y círculos de seguridad de todos los vuelos
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             int centroX = panel1.Width / 2;
             int centroY = panel1.Height / 2;
-
- 
-
-            // linea de trayectoria de cada vuelo, del origen al destino
-            Pen myPen = new Pen(Color.Gray);
-
-            Point origen1 = new Point((int)(centroX + flightplan1.GetInitialPosition().GetX()), (int)(centroY - flightplan1.GetInitialPosition().GetY()));
-            Point destino1 = new Point((int)(centroX + flightplan1.GetFinalPosition().GetX()), (int)(centroY - flightplan1.GetFinalPosition().GetY()));
-            e.Graphics.DrawLine(myPen, origen1, destino1);
-
-            Point origen2 = new Point((int)(centroX + flightplan2.GetInitialPosition().GetX()), (int)(centroY - flightplan2.GetInitialPosition().GetY()));
-            Point destino2 = new Point((int)(centroX + flightplan2.GetFinalPosition().GetX()), (int)(centroY - flightplan2.GetFinalPosition().GetY()));
-            e.Graphics.DrawLine(myPen, origen2, destino2);
-
-            myPen.Dispose();
-
-            // círculo de seguridad alrededor de cada avión.
-            // draw elipse usa la esquina de arriba a la izquierda, por eso le restamos el radio
-            // para cada circulo comprobamos si hay conflicto: si lo hay, pintamos el fondo de ambas elipses
-            Boolean conflicto = flightplan1.Distance(flightplan2) < 2 * securityDistance;
             float radio = (float)securityDistance;
 
-            float esquinaX1 = (float)(centroX + flightplan1.GetCurrentPosition().GetX() - radio);
-            float esquinaY1 = (float)(centroY - flightplan1.GetCurrentPosition().GetY() - radio);
-           
-            float esquinaX2 = (float)(centroX + flightplan2.GetCurrentPosition().GetX() - radio);
-            float esquinaY2 = (float)(centroY - flightplan2.GetCurrentPosition().GetY() - radio);
-            
 
-            if (conflicto)
+            // linea de trayectoria de cada vuelo, del origen al destino
+            Pen lineaGris = new Pen(Color.Gray);
+
+            for (int i = 0; i < lista.GetNumber(); i++)
             {
-                SolidBrush relleno = new SolidBrush(Color.FromArgb(70, Color.Red));
-                e.Graphics.FillEllipse(relleno, esquinaX1, esquinaY1, 2 * radio, 2 * radio);
-                e.Graphics.FillEllipse(relleno, esquinaX2, esquinaY2, 2 * radio, 2 * radio);
-                relleno.Dispose();
+                FlightPlan f = lista.GetFlightPlan(i);
+                Point origen = new Point((int)(centroX + f.GetInitialPosition().GetX()), (int)(centroY - f.GetInitialPosition().GetY()));
+                Point destino = new Point((int)(centroX + f.GetFinalPosition().GetX()), (int)(centroY - f.GetFinalPosition().GetY()));
+                e.Graphics.DrawLine(lineaGris, origen, destino);
             }
 
-            e.Graphics.DrawEllipse(Pens.Red, esquinaX1, esquinaY1, 2 * radio, 2 * radio);
-            e.Graphics.DrawEllipse(Pens.Blue, esquinaX2, esquinaY2, 2 * radio, 2 * radio);
+            lineaGris.Dispose();
 
+            // relleno rojo suave en los vuelos que están en conflicto
+            for (int i = 0; i < lista.GetNumber(); i++)
+            {
+                if (lista.EstaEnConflicto(i, securityDistance))
+                {
+                    FlightPlan f = lista.GetFlightPlan(i);
+                    float esquinaX = (float)(centroX + f.GetCurrentPosition().GetX() - radio);
+                    float esquinaY = (float)(centroY - f.GetCurrentPosition().GetY() - radio);
+                    SolidBrush relleno = new SolidBrush(Color.FromArgb(70, Color.Red));
+                    e.Graphics.FillEllipse(relleno, esquinaX, esquinaY, 2 * radio, 2 * radio);
+                    relleno.Dispose();
+                }
 
+            }
+
+            // borde de cada círculo, dibujado por encima del relleno
+            for (int i = 0; i < lista.GetNumber(); i++)
+            {
+                FlightPlan f = lista.GetFlightPlan(i);
+                float esquinaX = (float)(centroX + f.GetCurrentPosition().GetX() - radio);
+                float esquinaY = (float)(centroY - f.GetCurrentPosition().GetY() - radio);
+                Pen borde = new Pen(colores[i % colores.Length]);
+                e.Graphics.DrawEllipse(borde, esquinaX, esquinaY, 2 * radio, 2 * radio);
+                borde.Dispose();
+            }
 
         }
         
 
       
-
+        // Coloca cada avión en su posición actual y repinta
+        // Si hay conflicto en el instante actual, la simulación automática se para
+        // Se ejecuta al abrir el formulario y al mover los aviones
         private void ColocarAviones()
         {
             int centroX = panel1.Width / 2;
             int centroY = panel1.Height / 2;
-            // AVION 1
 
-            //se ejecuta al abrir el formulario y cada vez que se mueven los aviones
-            if (flightplan1 != null)
+            
+            for (int i = 0; i < aviones.Count; i++)
             {
-                double x1 = flightplan1.GetCurrentPosition().GetX();
-                double y1 = flightplan1.GetCurrentPosition().GetY();
-                // leemos la posición actual del avión 1 (esto se puede hacer porque principal
-                // ya nos ha pasado los vuelos con SetFlighplans)
-                double pixelX1 = panel1.Width / 2 + x1; // el (0,0) de nuestros ejes está en el centro del panel
-                double pixelY1 = panel1.Height / 2 - y1; // restamos porque en Windows la Y crece hacia abajo
-
-                avion1.Location = new Point((int)(pixelX1 - avion1.Width / 2), (int)(pixelY1 - avion1.Height / 2));
+                FlightPlan f = lista.GetFlightPlan(i);
+                double pixelX = centroX + f.GetCurrentPosition().GetX(); // el (0,0) de nuestros ejes está en el centro del panel
+                double pixelY = centroY - f.GetCurrentPosition().GetY(); // restamos porque en Windows la Y crece hacia abajo
+                
+                // le restamos a su posicion la mitad del tamano del cuadrado, para q la ubicacion quede en su mitad
+                aviones[i].Location = new Point((int)(pixelX - aviones[i].Width / 2), (int)(pixelY - aviones[i].Height / 2));
             }
-            // le restamos a su posicion la mitad del tamano del cuadrado, para q la ubicacion quede en su mitad
-
-
-
-            // AVION 2
-            if (flightplan2 != null)
-            {
-                double x2 = flightplan2.GetCurrentPosition().GetX();
-                double y2 = flightplan2.GetCurrentPosition().GetY();
-
-                double pixelX2 = panel1.Width / 2 + x2;
-                double pixelY2 = panel1.Height / 2 - y2;
-
-                avion2.Location = new Point((int)(pixelX2 - avion2.Width / 2), (int)(pixelY2 - avion2.Height / 2));
-            }
-
+            
             
             panel1.Invalidate();
 
 
-            // si se acercan más que la distancia de seguridad
+            // si un par de vuelos (o más) se acercan a una distancia menor que la de seguridad
             // paramos la simulación automática porque sino el timer seguiria
-            double distancia = flightplan1.Distance(flightplan2);
-            if (distancia < securityDistance * 2)
+            if (lista.HayConflicto(securityDistance))
             {
                 autoTimer.Stop();
                 startAutoButton.Enabled = true;
@@ -134,17 +145,13 @@ namespace Formularios
             }
         }
 
+        // Crea los aviones, avisa si hay conflicto previsto y coloca los aviones
         private void FormEspacioAereo_Load(object sender, EventArgs e)
         {
-            //guardamos en cada avión su plan de vuelo para saber cuál es al hacer clic
-            avion1.Tag = flightplan1;
-            avion2.Tag = flightplan2;
+            CrearAviones();
 
-            //al hacer clic en un avión se ejecuta  flight information
-            avion1.Click += FlightInformation;
-            avion2.Click += FlightInformation;
-            // antes de empezar, comprobamos si habrá conflicto
-            if (flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime))
+            // antes de empezar, comprobamos si habrá conflicto, si lo hay y el usuario quiere resolverlo se intenta resolver
+            if (lista.PredecirConflictos(securityDistance, cycleTime))
             {
                 DialogResult respuesta = MessageBox.Show(
                     "Los vuelos entrarán en conflicto. ¿Quieres resolverlo automáticamente?",
@@ -153,49 +160,21 @@ namespace Formularios
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    ResolverConflicto();
+                    bool res = lista.ResolverConflictos(securityDistance, cycleTime);
+                    if (!res)
+                        MessageBox.Show("No se ha podido resolver el conflicto automáticamente. Se mantendrán las velocidades originales.");
+                    else
+                        MessageBox.Show("Se ha resuelto el conflicto automáticamente. Se han ajustado las velocidades de los vuelos.");
                 }
+
             }
-            ColocarAviones();
             // colocamos aviones en posicion incial al abrir el form
-
-        }
-        // si hay conflicto, cambia la velocidad de un vuelo para evitar el conflicto
-        private void ResolverConflicto()
-        {
-            double velocidadOriginal = flightplan2.GetVelocidad();
-            double nuevaVelocidad = velocidadOriginal;
-
-            //bajamos la velocidad del avión 2 un 10% cada vez, mientras siga habiendo conflicto
-            // con un límite: el10% de su velocidad original, por si el conflicto no tiene solicion
-            while (flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime)
-                   && nuevaVelocidad > velocidadOriginal * 0.1)
-            {
-                nuevaVelocidad = nuevaVelocidad * 0.9;
-                flightplan2.SetVelocidad(nuevaVelocidad);
-            }
-
-            // comprobamos si lo hemos conseguido
-            if (flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime))
-            {
-                flightplan2.SetVelocidad(velocidadOriginal); // no se ha podido: dejamos la velocidad como estaba
-                MessageBox.Show("No se ha podido resolver el conflicto cambiando la velocidad.");
-            }
-            else
-            {
-                MessageBox.Show("Conflicto resuelto. Nueva velocidad del vuelo " + flightplan2.GetId() + ": " + nuevaVelocidad.ToString("F2"));
-            }
-        }
-        
-
-        
-
-       
+            ColocarAviones();
+        } 
 
         private void moverButton_Click(object sender, EventArgs e)
         {
-            flightplan1.Mover(cycleTime);
-            flightplan2.Mover(cycleTime);
+            lista.Mover(cycleTime);
             // esto solo cambia los numeros dentro de FlightPlan
             ColocarAviones();
             // colocamos aviones en la nueva posicion
@@ -210,30 +189,28 @@ namespace Formularios
             flightInfoForm.SetFlightPlan(flightplan);
             flightInfoForm.ShowDialog();
         }
+        // Inicia la simulación automática
         private void StartAutoButton_Click(object sender, EventArgs e)
         {
-            
-            
             startAutoButton.Enabled = false;
             stopAutoButton.Enabled = true;
             autoTimer.Start();
         }
-
+        // Para la simulación automática
         private void StopAutoButton_Click(object sender, EventArgs e)
         {
             autoTimer.Stop();
             startAutoButton.Enabled = true;
             stopAutoButton.Enabled = false;
         }
-
+        // Mueve todos los vuelos cada ciclo y repinta.
+        // Cuando todos han llegado, para la simulación ya que no tiene sentido seguir
         private void AutoTimer_Tick(object sender, EventArgs e)
         {
-            // mueve cada ciclo y repinta
-            if (flightplan1 != null) flightplan1.Mover(cycleTime);
-            if (flightplan2 != null) flightplan2.Mover(cycleTime);
+            lista.Mover(cycleTime);
             ColocarAviones();
-            // Cuando los dos han llegado ya no tiene sentido seguir, paramos la simulación
-            if (flightplan1.HasArrived() && flightplan2.HasArrived())
+
+            if (lista.HanLlegadoTodos())
             {
                 autoTimer.Stop();
                 startAutoButton.Enabled = true;
@@ -244,31 +221,24 @@ namespace Formularios
         private void DatosVuelosButton_Click(object sender, EventArgs e)
         {
             FormDatosVuelos formDatosVuelos = new FormDatosVuelos();
-            formDatosVuelos.SetFlightPlans(flightplan1, flightplan2);
+            formDatosVuelos.SetFlightPlans(lista);
             formDatosVuelos.ShowDialog();
         }
 
+        // Comprueba si habrá conflicto entre algún par de vuelos en el futuro
         private void conflictosButton_Click(object sender, EventArgs e)
         {
-            // Botón para comprobar si habrá conflicto entre los aviones en el futuro
-            Boolean hayConflicto = flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime);
-            
-            if (hayConflicto)
+            if (lista.PredecirConflictos(securityDistance, cycleTime))
                 MessageBox.Show("¡Advertencia! Se predice un conflicto entre los aviones en el futuro.");
             else
                 MessageBox.Show("No se predice ningún conflicto entre los aviones en el futuro.");
-
         }
 
-        private void avion2_Click(object sender, EventArgs e)
-        {
 
-        }
-
+        // Devuelve todos los vuelos a su posición inicial
         private void buttonReiniciar_Click(object sender, EventArgs e)
         {
-            flightplan1.Reiniciar();
-            flightplan2.Reiniciar();
+            lista.Reiniciar();
             ColocarAviones();
         }
 
@@ -280,17 +250,16 @@ namespace Formularios
             stopAutoButton.Enabled = false;
 
             FormCambiarVelocidades formVelocidades = new FormCambiarVelocidades();
-            formVelocidades.SetFlightPlans(flightplan1, flightplan2);
+            formVelocidades.SetFlightPlans(lista);
             formVelocidades.ShowDialog();
 
             
             if (formVelocidades.GetCambiado())
             {
-                flightplan1.Reiniciar();
-                flightplan2.Reiniciar();
+                lista.Reiniciar();
                 ColocarAviones();
 
-                if (flightplan1.PredecirConflicto(flightplan2, securityDistance, cycleTime))
+                if (lista.PredecirConflictos(securityDistance, cycleTime))
                     MessageBox.Show("Con estas velocidades los vuelos siguen entrando en conflicto.");
                 else
                     MessageBox.Show("Con estas velocidades ya no hay conflicto.");

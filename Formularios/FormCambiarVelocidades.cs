@@ -1,73 +1,78 @@
-﻿using System;
+﻿using FlightLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
-using FlightLib;
 using System.Windows.Forms;
 
 namespace Formularios
 {
     public partial class FormCambiarVelocidades : Form
     {
-        FlightPlan fp1;
-        FlightPlan fp2;
+        FlightPlanList lista; // todos los vuelos de la simulación
         bool cambiado = false;  // pasa a true si el usuario aplica velocidades nuevas
         public FormCambiarVelocidades()
         {
             InitializeComponent();
         }
-        public void SetFlightPlans(FlightPlan p1, FlightPlan p2)
+        // Establece la lista de vuelos proveniente del FormEspacioAereo
+        public void SetFlightPlans(FlightPlanList l)
         {
-            fp1 = p1;
-            fp2 = p2;
+            lista = l;
         }
-
+        // Devuelve true si el usuario ha aplicado velocidades nuevas
         public bool GetCambiado()
         {
             return cambiado;
         }
-
+        // Rellena la tabla con una fila por vuelo: su nombre y velocidad actual
+        // El usuario puede cambiar la velocidad de cada vuelo, el nombre no
         private void FormCambiarVelocidades_Load(object sender, EventArgs e)
         {
-            // tabla con una fila por vuelo: su nombre y su velocidad actual
             tablaVelocidades.ColumnCount = 2;
-            tablaVelocidades.RowCount = 2;
+            tablaVelocidades.RowCount = lista.GetNumber();
 
             tablaVelocidades.Columns[0].Name = "Vuelo";
             tablaVelocidades.Columns[1].Name = "Velocidad";
 
-            // el nombre del vuelo no se puede cambiar, solo la velocidad
+            // el nombre del vuelo no se puede cambiar, la velocidad sí
             tablaVelocidades.Columns[0].ReadOnly = true;
 
-            tablaVelocidades.Rows[0].Cells[0].Value = fp1.GetId();
-            tablaVelocidades.Rows[0].Cells[1].Value = fp1.GetVelocidad();
-
-            tablaVelocidades.Rows[1].Cells[0].Value = fp2.GetId();
-            tablaVelocidades.Rows[1].Cells[1].Value = fp2.GetVelocidad();
+            for (int i = 0; i < lista.GetNumber(); i++)
+            {
+                FlightPlan f = lista.GetFlightPlan(i);
+                tablaVelocidades.Rows[i].Cells[0].Value = f.GetId();
+                tablaVelocidades.Rows[i].Cells[1].Value = f.GetVelocidad();
+            }
 
         }
-
+        // Lee las velocidades nuevas de la tabla y las aplica a todos los vuelos
+        // Si alguna no es válida, no cambia nada y avisa al usuario
         private void aplicarButton_Click(object sender, EventArgs e)
         {
             try
             {
-                // leemos las velocidades nuevas de la tabla (fila 0 = vuelo 1, fila 1 = vuelo 2)
-                double v1 = Convert.ToDouble(tablaVelocidades.Rows[0].Cells[1].Value);
-                double v2 = Convert.ToDouble(tablaVelocidades.Rows[1].Cells[1].Value);
-
-                if (v1 <= 0 || v2 <= 0)
+                // leemos todas las velocidades antes de cambiar ninguna
+                double[] nuevas = new double[lista.GetNumber()];
+                for (int i = 0; i < nuevas.Length; i++)
                 {
-                    MessageBox.Show("Las velocidades tienen que ser mayores que 0.");
-                    return;
+                    nuevas[i] = Convert.ToDouble(tablaVelocidades.Rows[i].Cells[1].Value);
+                    if (nuevas[i] <= 0)
+                    {
+                        MessageBox.Show("Todas las velocidades tienen que ser mayores que 0.");
+                        return;
+                    }
                 }
-
-                // si todo está bien, cambiamos las velocidades de los vuelos
-                fp1.SetVelocidad(v1);
-                fp2.SetVelocidad(v2);
+                // si todas son válidas, las aplicamos
+                for (int i = 0; i < nuevas.Length; i++)
+                {
+                    lista.GetFlightPlan(i).SetVelocidad(nuevas[i]);
+                }
 
                 cambiado = true;
                 Close();

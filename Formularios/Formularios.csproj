@@ -90,12 +90,6 @@
     <Compile Include="FormAddConfig.Designer.cs">
       <DependentUpon>FormAddConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddFlightPlans.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAddFlightPlans.Designer.cs">
-      <DependentUpon>FormAddFlightPlans.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FlightInfo.resx">
@@ -115,9 +109,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddConfig.resx">
       <DependentUpon>FormAddConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormAddFlightPlans.resx">
-      <DependentUpon>FormAddFlightPlans.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEspacioAereo.resx">
       <DependentUpon>FormEspacioAereo.cs</DependentUpon>

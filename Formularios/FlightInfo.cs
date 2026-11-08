@@ -22,6 +22,7 @@ namespace Formularios
             Xbox.Text = Convert.ToString(myflight.GetCurrentPosition().GetX());
             Ybox.Text = Convert.ToString(myflight.GetCurrentPosition().GetY());
             Speedbox.Text = Convert.ToString(myflight.GetVelocidad());
+            compañiaBox.Text = myflight.GetCompañia();
         }
         private void button1_Click(object sender, EventArgs e)
         {
