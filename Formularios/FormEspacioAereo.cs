@@ -177,21 +177,7 @@ namespace Formularios
             lista.Mover(cycleTime);
             // esto solo cambia los numeros dentro de FlightPlan
             ColocarAviones();
-            deshacerButton.Enabled = lista.PuedeDeshacer();
             // colocamos aviones en la nueva posicion
-        }
-
-        // Restaura las posiciones anteriores al último ciclo de simulación.
-        private void deshacerButton_Click(object sender, EventArgs e)
-        {
-            autoTimer.Stop();
-            startAutoButton.Enabled = true;
-            stopAutoButton.Enabled = false;
-
-            if (lista.DeshacerUltimoPaso())
-                ColocarAviones();
-
-            deshacerButton.Enabled = lista.PuedeDeshacer();
         }
         private void FlightInformation(object sender, EventArgs e)
         {
@@ -223,7 +209,6 @@ namespace Formularios
         {
             lista.Mover(cycleTime);
             ColocarAviones();
-            deshacerButton.Enabled = lista.PuedeDeshacer();
 
             if (lista.HanLlegadoTodos())
             {
@@ -253,12 +238,8 @@ namespace Formularios
         // Devuelve todos los vuelos a su posición inicial
         private void buttonReiniciar_Click(object sender, EventArgs e)
         {
-            autoTimer.Stop();
-            startAutoButton.Enabled = true;
-            stopAutoButton.Enabled = false;
             lista.Reiniciar();
             ColocarAviones();
-            deshacerButton.Enabled = lista.PuedeDeshacer();
         }
 
         private void cambiarVelocidadesButton_Click(object sender, EventArgs e)
@@ -277,12 +258,22 @@ namespace Formularios
             {
                 lista.Reiniciar();
                 ColocarAviones();
-                deshacerButton.Enabled = lista.PuedeDeshacer();
 
                 if (lista.PredecirConflictos(securityDistance, cycleTime))
                     MessageBox.Show("Con estas velocidades los vuelos siguen entrando en conflicto.");
                 else
                     MessageBox.Show("Con estas velocidades ya no hay conflicto.");
+            }
+        }
+
+        private void atrasButton_Click(object sender, EventArgs e)
+        {
+            if (lista.Retroceder() == true)
+            {
+                autoTimer.Stop();
+                startAutoButton.Enabled = true;
+                stopAutoButton.Enabled = false;
+                ColocarAviones();
             }
         }
     }
