@@ -276,5 +276,41 @@ namespace Formularios
                 ColocarAviones();
             }
         }
+
+        // Guarda el estado actual y cierra el formulario para poder reanudarlo después.
+        private void guardarYSalirButton_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog dialogo = new SaveFileDialog())
+            {
+                dialogo.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
+                dialogo.Title = "Guardar el estado de la simulación";
+                dialogo.FileName = "simulacion_guardada.txt";
+                dialogo.DefaultExt = "txt";
+                dialogo.AddExtension = true;
+
+                if (dialogo.ShowDialog(this) != DialogResult.OK)
+                    return;
+
+                bool estabaEnEjecucion = autoTimer.Enabled;
+                autoTimer.Stop();
+
+                try
+                {
+                    lista.GuardarEnArchivo(dialogo.FileName);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    if (estabaEnEjecucion)
+                        autoTimer.Start();
+
+                    MessageBox.Show(
+                        "No se pudo guardar la simulación: " + ex.Message,
+                        "Error al guardar",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

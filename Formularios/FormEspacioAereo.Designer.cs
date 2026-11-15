@@ -44,6 +44,7 @@
             this.buttonReiniciar = new System.Windows.Forms.Button();
             this.cambiarVelocidadesButton = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
+            this.guardarYSalirButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avion1)).BeginInit();
             this.SuspendLayout();
@@ -195,6 +196,16 @@
             this.atrasButton.UseVisualStyleBackColor = true;
             this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
             // 
+            // guardarYSalirButton
+            // 
+            this.guardarYSalirButton.Location = new System.Drawing.Point(668, 474);
+            this.guardarYSalirButton.Name = "guardarYSalirButton";
+            this.guardarYSalirButton.Size = new System.Drawing.Size(98, 40);
+            this.guardarYSalirButton.TabIndex = 11;
+            this.guardarYSalirButton.Text = "Guardar y salir";
+            this.guardarYSalirButton.UseVisualStyleBackColor = true;
+            this.guardarYSalirButton.Click += new System.EventHandler(this.guardarYSalirButton_Click);
+            // 
             // FormEspacioAereo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +213,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(796, 548);
             this.Controls.Add(this.atrasButton);
+            this.Controls.Add(this.guardarYSalirButton);
             this.Controls.Add(this.cambiarVelocidadesButton);
             this.Controls.Add(this.buttonReiniciar);
             this.Controls.Add(this.conflictosButton);
@@ -242,6 +254,7 @@
         private System.Windows.Forms.Button buttonReiniciar;
         private System.Windows.Forms.Button cambiarVelocidadesButton;
         private System.Windows.Forms.Button atrasButton;
+        private System.Windows.Forms.Button guardarYSalirButton;
     }
 
 }
