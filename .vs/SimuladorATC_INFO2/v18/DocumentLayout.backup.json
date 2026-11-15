@@ -1,34 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\",
+  "WorkspaceRootPath": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\acer\\source\\repos\\simuladoratc_info2\\formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|C:\\Users\\Dmitriy\\Downloads\\version2_1\\flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\dmitriy\\downloads\\version2_1\\formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\Dmitriy\\Downloads\\version2_1\\formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|C:\\Users\\Dmitriy\\Downloads\\version2_1\\flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\formularios\\formaddconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\Dmitriy\\Downloads\\version2_1\\formularios\\formaddconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formaddconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dmitriy\\Downloads\\version2_1\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\formularios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:formularios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\formularios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\dmitriy\\downloads\\version2_1\\formularios\\formespacioaereo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formespacioaereo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\dmitriy\\downloads\\version2_1\\formularios\\formespacioaereo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formespacioaereo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,33 +45,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormPrincipal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\FormPrincipal.cs",
-              "RelativeDocumentMoniker": "Formularios\\FormPrincipal.cs",
-              "ToolTip": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\FormPrincipal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\FormPrincipal.cs [Dise\u00F1o]",
+              "DocumentIndex": 8,
+              "Title": "FormEspacioAereo.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormEspacioAereo.Designer.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormEspacioAereo.Designer.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormEspacioAereo.Designer.cs",
+              "RelativeToolTip": "Formularios\\FormEspacioAereo.Designer.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T14:14:04.871Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-11-15T11:16:22.702Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "FormEspacioAereo.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormEspacioAereo.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormEspacioAereo.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormEspacioAereo.cs",
+              "RelativeToolTip": "Formularios\\FormEspacioAereo.cs",
+              "ViewState": "AgIAALIAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T11:16:17.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "FormPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\FormPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormPrincipal.cs",
               "RelativeDocumentMoniker": "Formularios\\FormPrincipal.cs",
-              "ToolTip": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\FormPrincipal.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormPrincipal.cs",
               "RelativeToolTip": "Formularios\\FormPrincipal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwCIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-02T14:14:04.871Z",
               "EditorCaption": ""
@@ -73,9 +106,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "FlightPlan.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\FlightLib\\FlightPlan.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\FlightLib\\FlightPlan.cs",
               "RelativeDocumentMoniker": "FlightLib\\FlightPlan.cs",
-              "ToolTip": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\FlightLib\\FlightPlan.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\FlightLib\\FlightPlan.cs",
               "RelativeToolTip": "FlightLib\\FlightPlan.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA1wBQAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -83,23 +116,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "FlightPlanList.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\FlightLib\\FlightPlanList.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\FlightLib\\FlightPlanList.cs",
               "RelativeDocumentMoniker": "FlightLib\\FlightPlanList.cs",
-              "ToolTip": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\FlightLib\\FlightPlanList.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\FlightLib\\FlightPlanList.cs",
               "RelativeToolTip": "FlightLib\\FlightPlanList.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAkwBUAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvxcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T14:14:04.856Z"
+              "WhenOpened": "2026-11-02T14:14:04.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormPrincipal.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormPrincipal.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\FormPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T14:14:04.871Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "FormAddConfig.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\FormAddConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormAddConfig.cs",
               "RelativeDocumentMoniker": "Formularios\\FormAddConfig.cs",
-              "ToolTip": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\FormAddConfig.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\Formularios\\FormAddConfig.cs",
               "RelativeToolTip": "Formularios\\FormAddConfig.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAswCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -109,9 +155,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\.gitignore",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\.gitignore",
+              "ToolTip": "C:\\Users\\Dmitriy\\Downloads\\version2_1\\.gitignore",
               "RelativeToolTip": ".gitignore",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -122,9 +168,9 @@
               "DocumentIndex": 6,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\Form1.cs",
-              "RelativeDocumentMoniker": "Formularios\\Form1.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\Form1.cs",
               "ToolTip": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\Form1.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Formularios\\Form1.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "..\\..\\..\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\Form1.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-02T14:14:04.95Z"
             }

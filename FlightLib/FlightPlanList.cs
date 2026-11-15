@@ -7,12 +7,14 @@ namespace FlightLib
     public class FlightPlanList
     {
         List<FlightPlan> lista = new List<FlightPlan>();
+        Stack<Position[]> historialPosiciones = new Stack<Position[]>();
         public FlightPlanList()
         { }
 
         // Agrega un plan de vuelo a la lista, devuelve 0 si se agrega correctamente
         public int AddFlightPlan(FlightPlan p)
         {
+            historialPosiciones.Clear();
             lista.Add(p);
             return 0;
         }
@@ -103,7 +105,10 @@ namespace FlightLib
 
             // Solo cambiamos la lista si no ha habido errores
             if (errores.Count == 0)
+            {
                 lista = nuevos;
+                historialPosiciones.Clear();
+            }
 
             return errores;
         }
@@ -125,10 +130,40 @@ namespace FlightLib
         // Mueve todos los planes de vuelo en la lista un tiempo dado
         public void Mover(int tiempo)
         {
+            Position[] posicionesAnteriores = new Position[lista.Count];
+            for (int i = 0; i < lista.Count; i++)
+            {
+                Position posicion = lista[i].GetCurrentPosition();
+                posicionesAnteriores[i] = new Position(posicion.GetX(), posicion.GetY());
+            }
+            historialPosiciones.Push(posicionesAnteriores);
+
             for(int i = 0; i < lista.Count; i++)
             {
                 lista[i].Mover(tiempo);
             }
+        }
+
+        // Deshace el último movimiento de todos los planes de vuelo.
+        // Devuelve false si no hay ningún movimiento que deshacer.
+        public bool DeshacerUltimoPaso()
+        {
+            if (historialPosiciones.Count == 0)
+                return false;
+
+            Position[] posicionesAnteriores = historialPosiciones.Pop();
+            for (int i = 0; i < lista.Count && i < posicionesAnteriores.Length; i++)
+            {
+                lista[i].SetCurrentPosition(posicionesAnteriores[i]);
+            }
+
+            return true;
+        }
+
+        // Indica si existe un movimiento que se pueda deshacer.
+        public bool PuedeDeshacer()
+        {
+            return historialPosiciones.Count > 0;
         }
         // Comprueba si hay algún par de vuelos en conflicto en el instante actual, dada la distancia de seguridad
         public bool HayConflicto(double distanciaSeguridad)
@@ -191,6 +226,7 @@ namespace FlightLib
         // Devuelve todos los vuelos a su posición inicial
         public void Reiniciar()
         {
+            historialPosiciones.Clear();
             for (int i = 0; i < lista.Count; i++)
             {
                 lista[i].Reiniciar();

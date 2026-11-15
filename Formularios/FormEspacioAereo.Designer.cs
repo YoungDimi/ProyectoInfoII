@@ -42,6 +42,7 @@
             this.DatosVuelosButton = new System.Windows.Forms.Button();
             this.conflictosButton = new System.Windows.Forms.Button();
             this.buttonReiniciar = new System.Windows.Forms.Button();
+            this.deshacerButton = new System.Windows.Forms.Button();
             this.cambiarVelocidadesButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avion1)).BeginInit();
@@ -170,6 +171,17 @@
             this.buttonReiniciar.UseVisualStyleBackColor = true;
             this.buttonReiniciar.Click += new System.EventHandler(this.buttonReiniciar_Click);
             // 
+            // deshacerButton
+            // 
+            this.deshacerButton.Enabled = false;
+            this.deshacerButton.Location = new System.Drawing.Point(904, 315);
+            this.deshacerButton.Name = "deshacerButton";
+            this.deshacerButton.Size = new System.Drawing.Size(103, 23);
+            this.deshacerButton.TabIndex = 10;
+            this.deshacerButton.Text = "Deshacer paso";
+            this.deshacerButton.UseVisualStyleBackColor = true;
+            this.deshacerButton.Click += new System.EventHandler(this.deshacerButton_Click);
+            // 
             // cambiarVelocidadesButton
             // 
             this.cambiarVelocidadesButton.Location = new System.Drawing.Point(904, 344);
@@ -191,6 +203,7 @@
             this.Controls.Add(this.buttonReiniciar);
             this.Controls.Add(this.conflictosButton);
             this.Controls.Add(this.DatosVuelosButton);
+            this.Controls.Add(this.deshacerButton);
             this.Controls.Add(this.moverButton);
             this.Controls.Add(this.startAutoButton);
             this.Controls.Add(this.stopAutoButton);
@@ -225,6 +238,7 @@
         private System.Windows.Forms.Button DatosVuelosButton;
         private System.Windows.Forms.Button conflictosButton;
         private System.Windows.Forms.Button buttonReiniciar;
+        private System.Windows.Forms.Button deshacerButton;
         private System.Windows.Forms.Button cambiarVelocidadesButton;
     }
 
