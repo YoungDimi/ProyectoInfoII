@@ -1,5 +1,9 @@
-﻿using FlightLib;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FlightLib;
 
 namespace SimulatorConsole
 {
@@ -29,7 +33,7 @@ namespace SimulatorConsole
                 double fx = Convert.ToDouble(trozos[0]);
                 double fy = Convert.ToDouble(trozos[1]);
 
-                FlightPlan plan_a = new FlightPlan(identificador,"", ix, iy, fx, fy, velocidad);
+                FlightPlan plan_a = new FlightPlan(identificador, ix, iy, fx, fy, velocidad);
 
                 
                 
@@ -52,7 +56,7 @@ namespace SimulatorConsole
                 fx = Convert.ToDouble(trozos[0]);
                 fy = Convert.ToDouble(trozos[1]);
 
-                FlightPlan plan_b = new FlightPlan(identificador,"", ix, iy, fx, fy, velocidad);
+                FlightPlan plan_b = new FlightPlan(identificador, ix, iy, fx, fy, velocidad);
 
 
 
