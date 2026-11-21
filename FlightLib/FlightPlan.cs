@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FlightLib
 {
@@ -12,7 +13,7 @@ namespace FlightLib
         Position currentPosition; // posicion actual
         Position finalPosition; // posicion final
         double velocidad;
-        Pilaposiciones historial = new Pilaposiciones();
+        Stack<Position> historial = new Stack<Position>(); // posiciones anteriores del vuelo, para poder deshacer pasos
 
 
         public FlightPlan(string id, string compañia, double cpx, double cpy, double fpx, double fpy, double velocidad)
@@ -65,7 +66,7 @@ namespace FlightLib
         {
             if (HasArrived() == false)
             {
-                historial.Apilar(new Position(currentPosition.GetX(), currentPosition.GetY()));
+                historial.Push(new Position(currentPosition.GetX(), currentPosition.GetY()));
             }
             // Guarda una copia (new) de la posicion actual antes de mover.
             // Si ya ha llegado no se guarda, para que cada click deshaga un movimiento real.
@@ -213,19 +214,21 @@ namespace FlightLib
         public void Reiniciar() 
         {
             this.currentPosition = new Position(initialPosition.GetX(), initialPosition.GetY());
+            historial.Clear(); // al volver al principio ya no queda nada que deshacer
         }
-       
-        
-        // true si ha retrocedido, false si no habia nada guardado.
+
+
+        // Devuelve el vuelo a la posición que tenía antes del último movimiento.
+        // Devuelve true si ha retrocedido y false si no había ningún paso guardado.
         public Boolean Retroceder()
         {
-            if (historial.vacia() == true)
+            if (historial.Count == 0)
             {
                 return false;
             }
             else
             {
-                currentPosition = historial.desapilar();
+                currentPosition = historial.Pop();
                 return true;
             }
         }

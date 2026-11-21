@@ -43,8 +43,6 @@
   <ItemGroup>
     <Compile Include="FlightPlan.cs" />
     <Compile Include="FlightPlanList.cs" />
-    <Compile Include="nodo.cs" />
-    <Compile Include="Pilaposiciones.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

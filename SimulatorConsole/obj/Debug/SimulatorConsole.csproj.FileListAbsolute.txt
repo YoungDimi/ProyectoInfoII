@@ -28,3 +28,13 @@ C:\Users\Dmitriy\source\repos\ProyectoInfoII\8o7h\SimulatorConsole\obj\Debug\Sim
 C:\Users\Dmitriy\source\repos\ProyectoInfoII\8o7h\SimulatorConsole\obj\Debug\Simulato.840E03AB.Up2Date
 C:\Users\Dmitriy\source\repos\ProyectoInfoII\8o7h\SimulatorConsole\obj\Debug\SimulatorConsole.exe
 C:\Users\Dmitriy\source\repos\ProyectoInfoII\8o7h\SimulatorConsole\obj\Debug\SimulatorConsole.pdb
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\bin\Debug\SimulatorConsole.exe.config
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\bin\Debug\SimulatorConsole.exe
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\bin\Debug\SimulatorConsole.pdb
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\bin\Debug\FlightLib.dll
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\bin\Debug\FlightLib.pdb
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\obj\Debug\SimulatorConsole.csproj.AssemblyReference.cache
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\obj\Debug\SimulatorConsole.csproj.CoreCompileInputs.cache
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\obj\Debug\Simulato.840E03AB.Up2Date
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\obj\Debug\SimulatorConsole.exe
+C:\Users\palo\source\repos\ProyectoInfo2_v2\SimulatorConsole\obj\Debug\SimulatorConsole.pdb

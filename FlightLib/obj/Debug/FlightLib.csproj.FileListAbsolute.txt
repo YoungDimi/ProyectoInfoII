@@ -22,3 +22,15 @@ C:\Users\Dmitriy\source\repos\ProyectoInfoII\8o7h\FlightLib\obj\Debug\FlightLib.
 C:\Users\Dmitriy\source\repos\ProyectoInfoII\8o7h\FlightLib\obj\Debug\FlightLib.csproj.CoreCompileInputs.cache
 C:\Users\Dmitriy\source\repos\ProyectoInfoII\8o7h\FlightLib\obj\Debug\FlightLib.dll
 C:\Users\Dmitriy\source\repos\ProyectoInfoII\8o7h\FlightLib\obj\Debug\FlightLib.pdb
+C:\Users\palo\source\repos\ProyectoInfo2_v2_avance\FlightLib\bin\Debug\FlightLib.dll
+C:\Users\palo\source\repos\ProyectoInfo2_v2_avance\FlightLib\bin\Debug\FlightLib.pdb
+C:\Users\palo\source\repos\ProyectoInfo2_v2_avance\FlightLib\obj\Debug\FlightLib.csproj.AssemblyReference.cache
+C:\Users\palo\source\repos\ProyectoInfo2_v2_avance\FlightLib\obj\Debug\FlightLib.csproj.CoreCompileInputs.cache
+C:\Users\palo\source\repos\ProyectoInfo2_v2_avance\FlightLib\obj\Debug\FlightLib.dll
+C:\Users\palo\source\repos\ProyectoInfo2_v2_avance\FlightLib\obj\Debug\FlightLib.pdb
+C:\Users\palo\source\repos\ProyectoInfo2_v2\FlightLib\bin\Debug\FlightLib.dll
+C:\Users\palo\source\repos\ProyectoInfo2_v2\FlightLib\bin\Debug\FlightLib.pdb
+C:\Users\palo\source\repos\ProyectoInfo2_v2\FlightLib\obj\Debug\FlightLib.csproj.AssemblyReference.cache
+C:\Users\palo\source\repos\ProyectoInfo2_v2\FlightLib\obj\Debug\FlightLib.csproj.CoreCompileInputs.cache
+C:\Users\palo\source\repos\ProyectoInfo2_v2\FlightLib\obj\Debug\FlightLib.dll
+C:\Users\palo\source\repos\ProyectoInfo2_v2\FlightLib\obj\Debug\FlightLib.pdb
