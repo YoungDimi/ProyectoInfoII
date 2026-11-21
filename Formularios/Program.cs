@@ -11,7 +11,12 @@ namespace Formularios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Principal());
+            // primero el login; solo si el usuario se identifica se abre el programa
+            FormLogin login = new FormLogin();
+            login.ShowDialog();
+
+            if (login.GetAutenticado() == true)
+                Application.Run(new Principal());
         }
     }
 }

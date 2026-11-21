@@ -54,6 +54,12 @@
     <Compile Include="FlightInfo.Designer.cs">
       <DependentUpon>FlightInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCambiarVelocidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <EmbeddedResource Include="FormDistanciasVuelos.resx">
       <DependentUpon>FormDistanciasVuelos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +149,10 @@
     <ProjectReference Include="..\FlightLib\FlightLib.csproj">
       <Project>{3b53fcd9-7a68-42ef-a9da-b0628f94a07e}</Project>
       <Name>FlightLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionUsuarios\GestionUsuarios.csproj">
+      <Project>{6a1b9682-8c34-4e31-90ca-10ade9108ebc}</Project>
+      <Name>GestionUsuarios</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
