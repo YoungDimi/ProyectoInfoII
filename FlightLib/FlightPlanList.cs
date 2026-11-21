@@ -108,29 +108,21 @@ namespace FlightLib
             return errores;
         }
 
-        // Guarda el estado actual de cada vuelo en el formato de entrada existente.
-        // La posición actual se escribe como nueva posición inicial para poder reanudar
-        // la simulación desde este punto al cargar el fichero.
+        // Guarda en un fichero de texto el estado actual de todos los vuelos, con el mismo formato que el fichero de entrada.
+        // La posición actual se guarda como posición inicial, para poder seguir la simulación desde ese punto.
         public void GuardarEnArchivo(string rutaArchivo)
         {
-            using (StreamWriter escritor = new StreamWriter(rutaArchivo, false))
-            {
-                for (int i = 0; i < lista.Count; i++)
-                {
-                    FlightPlan vuelo = lista[i];
-                    Position posicionActual = vuelo.GetCurrentPosition();
-                    Position destino = vuelo.GetFinalPosition();
+            StreamWriter W = new StreamWriter(rutaArchivo);
 
-                    escritor.WriteLine(
-                        vuelo.GetId() + " " +
-                        vuelo.GetCompañia() + " " +
-                        vuelo.GetVelocidad() + " " +
-                        posicionActual.GetX() + " " +
-                        posicionActual.GetY() + " " +
-                        destino.GetX() + " " +
-                        destino.GetY());
-                }
+            for (int i = 0; i < lista.Count; i++)
+            {
+                FlightPlan vuelo = lista[i];
+                W.WriteLine(vuelo.GetId() + " " + vuelo.GetCompañia() + " " + vuelo.GetVelocidad() + " " +
+                            vuelo.GetCurrentPosition().GetX() + " " + vuelo.GetCurrentPosition().GetY() + " " +
+                            vuelo.GetFinalPosition().GetX() + " " + vuelo.GetFinalPosition().GetY());
             }
+
+            W.Close();
         }
 
 

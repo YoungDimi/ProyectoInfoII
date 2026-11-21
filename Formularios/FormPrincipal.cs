@@ -16,13 +16,13 @@ namespace Formularios
             InitializeComponent();
         }
 
-        // Pide al usuario un archivo de texto con los planes de vuelo y los carga en la lista
-        // Si tiene errores, los muestra en un MessageBox y no cambia la lista
+        // Pide al usuario un fichero de texto con los planes de vuelo y los carga en la lista.
+        // Si el fichero tiene errores, los muestra y no cambia la lista.
         private void introducirPlanesDeVueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialogo = new OpenFileDialog();
-            dialogo.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
-            dialogo.Title = "Selecciona un archivo de texto con los planes de vuelo";
+            dialogo.Filter = "Archivos de texto (*.txt)|*.txt";
+            dialogo.Title = "Selecciona el fichero con los planes de vuelo";
 
             if (dialogo.ShowDialog() != DialogResult.OK)
                 return;
@@ -34,21 +34,25 @@ namespace Formularios
 
                 if (errores.Count > 0)
                 {
-                    MessageBox.Show("El fichero tiene errores y no se ha cargado:\n\n" + string.Join("\n", errores),
-                "Error en el fichero");
+                    // juntamos todos los errores en un solo mensaje, uno por línea
+                    string mensaje = "El fichero tiene errores y no se ha cargado:\n\n";
+                    for (int i = 0; i < errores.Count; i++)
+                        mensaje = mensaje + errores[i] + "\n";
+
+                    MessageBox.Show(mensaje, "Error en el fichero");
                     return;
                 }
 
-                lista = nueva; // si no hay errores, cambiamos la lista
-                MessageBox.Show("Se han cargado correctamente " + lista.GetNumber() + " planes de vuelo.", "Carga correcta");
+                lista = nueva; // si no hay errores, nos quedamos con la lista nueva
+                MessageBox.Show("Se han cargado " + lista.GetNumber() + " planes de vuelo.", "Carga correcta");
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("No se ha encontrado el archivo.", "Error");
+                MessageBox.Show("No se ha encontrado el fichero.", "Error");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error al leer el archivo: " + ex.Message, "Error");
+                MessageBox.Show("No se ha podido leer el fichero.", "Error");
             }
         }
 

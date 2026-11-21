@@ -137,11 +137,18 @@ namespace Formularios
 
             // si un par de vuelos (o más) se acercan a una distancia menor que la de seguridad
             // paramos la simulación automática porque sino el timer seguiria
+            // alarma: si algún par de vuelos está más cerca que la distancia de seguridad,
+            // se para la simulación automática y se muestra el aviso en rojo
             if (lista.HayConflicto(securityDistance))
             {
                 autoTimer.Stop();
                 startAutoButton.Enabled = true;
                 stopAutoButton.Enabled = false;
+                alarmLabel.Visible = true;
+            }
+            else
+            {
+                alarmLabel.Visible = false;
             }
         }
 
@@ -277,40 +284,32 @@ namespace Formularios
             }
         }
 
-        // Guarda el estado actual y cierra el formulario para poder reanudarlo después.
+        // Para la simulación, pregunta dónde guardar la lista de vuelos, la guarda y cierra el espacio aéreo
         private void guardarYSalirButton_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog dialogo = new SaveFileDialog())
+            autoTimer.Stop();
+            startAutoButton.Enabled = true;
+            stopAutoButton.Enabled = false;
+
+            SaveFileDialog dialogo = new SaveFileDialog();
+            dialogo.Filter = "Archivos de texto (*.txt)|*.txt";
+            dialogo.Title = "Guardar la simulación";
+            dialogo.FileName = "simulacion_guardada.txt";
+
+            if (dialogo.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
             {
-                dialogo.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
-                dialogo.Title = "Guardar el estado de la simulación";
-                dialogo.FileName = "simulacion_guardada.txt";
-                dialogo.DefaultExt = "txt";
-                dialogo.AddExtension = true;
-
-                if (dialogo.ShowDialog(this) != DialogResult.OK)
-                    return;
-
-                bool estabaEnEjecucion = autoTimer.Enabled;
-                autoTimer.Stop();
-
-                try
-                {
-                    lista.GuardarEnArchivo(dialogo.FileName);
-                    Close();
-                }
-                catch (Exception ex)
-                {
-                    if (estabaEnEjecucion)
-                        autoTimer.Start();
-
-                    MessageBox.Show(
-                        "No se pudo guardar la simulación: " + ex.Message,
-                        "Error al guardar",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
+                lista.GuardarEnArchivo(dialogo.FileName);
+                MessageBox.Show("Simulación guardada. Carga este fichero más adelante para continuar desde aquí.");
+                Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se ha podido guardar el fichero.");
             }
         }
     }
+    
 }
