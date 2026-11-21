@@ -5,13 +5,14 @@ namespace Formularios
 {
     internal static class Program
     {
-        
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // primero el login; solo si el usuario se identifica se abre el programa
+
+            // primero el login, solo si entra bien se abre principal
             FormLogin login = new FormLogin();
             login.ShowDialog();
 

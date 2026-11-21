@@ -4,33 +4,34 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
+    // tabla con la distancia de un vuelo a todos los demas
     public partial class FormDistanciasVuelos : Form
     {
-        FlightPlan clickedFlightPlan; // vuelo sobre el que se ha hecho clic en FormDatosVuelos
-        FlightPlanList lista; // lista de planes de vuelo
+        FlightPlan clickedFlightPlan; // el vuelo que se ha clicado
+        FlightPlanList lista;
+
         public FormDistanciasVuelos()
         {
             InitializeComponent();
         }
 
+        // recibe el vuelo clicado y la lista de vuelos
         public void SetFlightPlans(FlightPlan clicked, FlightPlanList l)
         {
             clickedFlightPlan = clicked;
             lista = l;
-            // asi guardamos la informacion que recibimos del FormDatosVuelos
         }
 
-        // Muestra en una tabla la distancia del vuelo clicado a cada uno de los demás
+        // rellena la tabla con la distancia a cada uno de los otros vuelos
         private void FormDistanciasVuelos_Load(object sender, EventArgs e)
         {
             IDsVuelosLabel.Text = "Distancias desde " + clickedFlightPlan.GetId();
 
-            // columnas: vuelo y distancia
             tablaDistancias.ColumnCount = 2;
             tablaDistancias.Columns[0].Name = "Vuelo";
             tablaDistancias.Columns[1].Name = "Distancia";
 
-            // solo las filas de los vuelos distintos al vuelo clicado
+            // una fila por cada vuelo menos el clicado
             tablaDistancias.RowCount = lista.GetNumber() - 1;
 
             int fila = 0;
@@ -45,7 +46,7 @@ namespace Formularios
                 }
             }
 
-            tablaDistancias.ReadOnly = true; // no se pueden editar las distancias
+            tablaDistancias.ReadOnly = true;
 
         }
 

@@ -4,13 +4,13 @@ using System.IO;
 
 namespace GestionUsuarios
 {
-    // Clase con las operaciones sobre la base de datos de usuarios
+    // funciones de la base de datos de usuarios
     public class Gestion
     {
-        SQLiteConnection cnx; // conexión con la base de datos
+        SQLiteConnection cnx;
 
-        // Abre la base de datos de usuarios.
-        // Devuelve 0 si se ha abierto bien y -1 si no se encuentra el fichero.
+        // abre la base de datos
+        // devuelve 0 si va bien y -1 si no encuentra el fichero
         public int Iniciar()
         {
             string ruta = "..\\..\\..\\BaseDatos\\usuarios.db";
@@ -24,13 +24,13 @@ namespace GestionUsuarios
             return 0;
         }
 
-        // Cierra la base de datos
+        // cierra la base de datos
         public void Cerrar()
         {
             cnx.Close();
         }
-        // Comprueba si el nombre y la contraseña corresponden a un usuario registrado.
-        // Devuelve true si son correctos y false si no.
+
+        // devuelve true si el nombre y la contraseña son de un usuario registrado
         public bool Autenticar(string nombre, string password)
         {
             DataTable dt = new DataTable();
@@ -44,8 +44,7 @@ namespace GestionUsuarios
                 return false;
         }
 
-        // Comprueba si ya existe un usuario con ese nombre.
-        // Devuelve true si existe y false si no.
+        // devuelve true si ya hay un usuario con ese nombre
         public bool ExisteUsuario(string nombre)
         {
             DataTable dt = new DataTable();
@@ -58,8 +57,9 @@ namespace GestionUsuarios
             else
                 return false;
         }
-        // Añade un usuario nuevo a la base de datos.
-        // Devuelve 0 si se ha registrado y -1 si no se ha podido.
+
+        // añade un usuario nuevo
+        // devuelve 0 si va bien y -1 si no
         public int Registrar(string nombre, string password)
         {
             string sql = "INSERT INTO usuarios VALUES ('" + nombre + "', '" + password + "')";

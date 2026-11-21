@@ -3,40 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\formespacioaereo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formespacioaereo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\formularios\\formcambiarvelocidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formcambiarvelocidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\formularios\\flightinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\flightinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\formularios\\formdatosvuelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formdatosvuelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\formularios\\formespacioaereo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formespacioaereo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A1B9682-8C34-4E31-90CA-10ADE9108EBC}|GestionUsuarios\\GestionUsuarios.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\gestionusuarios\\gestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\formespacioaereo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formespacioaereo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A1B9682-8C34-4E31-90CA-10ADE9108EBC}|GestionUsuarios\\GestionUsuarios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\gestionusuarios\\gestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A1B9682-8C34-4E31-90CA-10ADE9108EBC}|GestionUsuarios\\GestionUsuarios.csproj|solutionrelative:gestionusuarios\\gestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\formularios\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\formularios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\formularios\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|c:\\users\\palo\\source\\repos\\proyectoinfo2_v2\\flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -52,10 +68,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\formularios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\formularios\\formespacioaereo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55800058-E5FD-48ED-9EBA-DF4529848F8F}|Formularios\\Formularios.csproj|solutionrelative:formularios\\formespacioaereo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,7 +77,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -84,43 +96,91 @@
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormEspacioAereo.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.cs",
-              "RelativeDocumentMoniker": "Formularios\\FormEspacioAereo.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\FormEspacioAereo.cs [Dise\u00F1o]",
+              "DocumentIndex": 4,
+              "Title": "FormCambiarVelocidades.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormCambiarVelocidades.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormCambiarVelocidades.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormCambiarVelocidades.cs",
+              "RelativeToolTip": "Formularios\\FormCambiarVelocidades.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-21T21:42:03.804Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\Program.cs",
-              "RelativeDocumentMoniker": "Formularios\\Program.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\Program.cs",
-              "RelativeToolTip": "Formularios\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-21T20:25:21.585Z",
+              "WhenOpened": "2026-11-21T22:33:43.875Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "FlightInfo.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FlightInfo.cs",
+              "RelativeDocumentMoniker": "Formularios\\FlightInfo.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FlightInfo.cs",
+              "RelativeToolTip": "Formularios\\FlightInfo.cs",
+              "ViewState": "AgIAAAYAAAAANDMzMzPrvyIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T22:32:59.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormDatosVuelos.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormDatosVuelos.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormDatosVuelos.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormDatosVuelos.cs",
+              "RelativeToolTip": "Formularios\\FormDatosVuelos.cs",
+              "ViewState": "AgIAAAsAAAAAz8zMzIwiwCgAAACfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T22:32:17.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormEspacioAereo.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormEspacioAereo.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.cs*",
+              "RelativeToolTip": "Formularios\\FormEspacioAereo.cs*",
+              "ViewState": "AgIAAD8AAACAy8zMzEw1wGAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T11:16:17.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FormLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormLogin.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormLogin.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Formularios\\FormLogin.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T20:07:10.275Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FlightPlanList.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\FlightLib\\FlightPlanList.cs",
+              "RelativeDocumentMoniker": "FlightLib\\FlightPlanList.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\FlightLib\\FlightPlanList.cs*",
+              "RelativeToolTip": "FlightLib\\FlightPlanList.cs*",
+              "ViewState": "AgIAAH4AAABAV2ZmZmYhwJIAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T14:14:04.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "FormLogin.cs",
               "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormLogin.cs",
               "RelativeDocumentMoniker": "Formularios\\FormLogin.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormLogin.cs",
-              "RelativeToolTip": "Formularios\\FormLogin.cs",
-              "ViewState": "AgIAADYAAACAZWZmZmYgwGUAAAAhAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormLogin.cs*",
+              "RelativeToolTip": "Formularios\\FormLogin.cs*",
+              "ViewState": "AgIAAB4AAAAAGAAAAADkvzgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-21T20:14:32.468Z",
               "EditorCaption": ""
@@ -128,6 +188,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "FlightPlan.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\FlightLib\\FlightPlan.cs",
+              "RelativeDocumentMoniker": "FlightLib\\FlightPlan.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\FlightLib\\FlightPlan.cs*",
+              "RelativeToolTip": "FlightLib\\FlightPlan.cs*",
+              "ViewState": "AgIAAEEAAAAAkpmZmRkSwEcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:34:35.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormPrincipal.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormPrincipal.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormPrincipal.cs",
+              "RelativeToolTip": "Formularios\\FormPrincipal.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwCMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T14:14:04.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormEspacioAereo.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.Designer.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormEspacioAereo.Designer.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.Designer.cs",
+              "RelativeToolTip": "Formularios\\FormEspacioAereo.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T11:16:22.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormEspacioAereo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormEspacioAereo.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Formularios\\FormEspacioAereo.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T21:42:03.804Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Gestion.cs",
               "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\GestionUsuarios\\Gestion.cs",
               "RelativeDocumentMoniker": "GestionUsuarios\\Gestion.cs",
@@ -135,105 +245,34 @@
               "RelativeToolTip": "GestionUsuarios\\Gestion.cs",
               "ViewState": "AgIAACMAAAAAAAAAAADwv0kAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-21T20:00:51.278Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-21T20:00:51.278Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormPrincipal.cs",
-              "RelativeDocumentMoniker": "Formularios\\FormPrincipal.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormPrincipal.cs",
-              "RelativeToolTip": "Formularios\\FormPrincipal.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAIwDgAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\Program.cs",
+              "RelativeDocumentMoniker": "Formularios\\Program.cs",
+              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\Program.cs",
+              "RelativeToolTip": "Formularios\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T14:14:04.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormEspacioAereo.cs",
-              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.cs",
-              "RelativeDocumentMoniker": "Formularios\\FormEspacioAereo.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.cs",
-              "RelativeToolTip": "Formularios\\FormEspacioAereo.cs",
-              "ViewState": "AgIAABEBAAAAcJmZmZkIwDQBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T11:16:17.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormLogin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormLogin.cs",
-              "RelativeDocumentMoniker": "Formularios\\FormLogin.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormLogin.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\FormLogin.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-21T20:07:10.275Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FlightPlanList.cs",
-              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\FlightLib\\FlightPlanList.cs",
-              "RelativeDocumentMoniker": "FlightLib\\FlightPlanList.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\FlightLib\\FlightPlanList.cs",
-              "RelativeToolTip": "FlightLib\\FlightPlanList.cs",
-              "ViewState": "AgIAAKYAAAAADGdmZmbiv34AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T14:14:04.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FlightPlan.cs",
-              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\FlightLib\\FlightPlan.cs",
-              "RelativeDocumentMoniker": "FlightLib\\FlightPlan.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\FlightLib\\FlightPlan.cs",
-              "RelativeToolTip": "FlightLib\\FlightPlan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-21T19:34:35.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-21T20:25:21.585Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "FormEspacioAereo.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.Designer.cs",
-              "RelativeDocumentMoniker": "Formularios\\FormEspacioAereo.Designer.cs",
-              "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormEspacioAereo.Designer.cs",
-              "RelativeToolTip": "Formularios\\FormEspacioAereo.Designer.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T11:16:22.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "FormPrincipal.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormPrincipal.cs",
               "RelativeDocumentMoniker": "Formularios\\FormPrincipal.cs",
               "ToolTip": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormPrincipal.cs [Dise\u00F1o]",
               "RelativeToolTip": "Formularios\\FormPrincipal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T14:14:04.871Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-11-02T14:14:04.871Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "FormAddConfig.cs",
               "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\Formularios\\FormAddConfig.cs",
               "RelativeDocumentMoniker": "Formularios\\FormAddConfig.cs",
@@ -241,12 +280,11 @@
               "RelativeToolTip": "Formularios\\FormAddConfig.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAswCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T14:14:04.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T14:14:04.919Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\palo\\source\\repos\\ProyectoInfo2_v2\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -254,12 +292,11 @@
               "RelativeToolTip": ".gitignore",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-11-02T14:14:04.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T14:14:04.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\Form1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\ACER\\source\\repos\\SimuladorATC_INFO2\\Formularios\\Form1.cs",

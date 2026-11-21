@@ -3,15 +3,16 @@ using System;
 
 namespace SimulatorConsole
 {
+    // programa de consola de la v1, pide dos vuelos y los mueve 20 ciclos
     public class Program
     {
         static void Main(string[] args)
         {
             FlightPlanList lista = new FlightPlanList();
-            try 
+            try
             {
+                // primer vuelo
                 Console.WriteLine("Escribe el identificador");
-                //   string nombre = Console.ReadLine();
                 string identificador = Console.ReadLine(); ;
 
                 Console.WriteLine("Escribe la velocidad");
@@ -31,10 +32,8 @@ namespace SimulatorConsole
 
                 FlightPlan plan_a = new FlightPlan(identificador,"", ix, iy, fx, fy, velocidad);
 
-                
-                
+                // segundo vuelo
                 Console.WriteLine("Escribe el identificador");
-                //   string nombre = Console.ReadLine();
                 identificador = Console.ReadLine(); ;
 
                 Console.WriteLine("Escribe la velocidad");
@@ -54,8 +53,6 @@ namespace SimulatorConsole
 
                 FlightPlan plan_b = new FlightPlan(identificador,"", ix, iy, fx, fy, velocidad);
 
-
-
                 lista.AddFlightPlan(plan_a);
                 lista.AddFlightPlan(plan_b);
 
@@ -74,12 +71,11 @@ namespace SimulatorConsole
                     }
                     i = i + 1;
                 }
-            } 
-            catch(FormatException) 
+            }
+            catch(FormatException)
             {
                 Console.WriteLine("Formato de entrada incorrecto");
             }
-           
 
             Console.ReadLine();
         }

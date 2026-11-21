@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
+    // ventana para poner la distancia de seguridad y el tiempo de ciclo
     public partial class FormAddConfig : Form
     {
         double securityDistanceVal;
@@ -12,29 +13,34 @@ namespace Formularios
         {
             InitializeComponent();
         }
+
+        // devuelve la distancia de seguridad
         public double GetSecurityDistance()
         {
             return securityDistanceVal;
         }
+
+        // recibe la distancia de seguridad actual y la escribe en su casilla
         public void SetSecurityDistance(double value)
         {
-            // asignar el valor de la distancia de seguridad y actualizar el TextBox correspondiente 
-             
             securityDistanceVal = value;
             securityDistance.Text = value.ToString();
         }
+
+        // devuelve el tiempo de ciclo
         public int GetCycleTime()
         {
             return cycleTimeVal;
         }
+
+        // recibe el tiempo de ciclo actual y lo escribe en su casilla
         public void SetCycleTime(int value)
         {
-            // método para asignar el valor del tiempo de ciclo y actualizar el TextBox correspondiente 
-             
             cycleTimeVal = value;
             cycleTime.Text = value.ToString();
         }
 
+        // comprueba los dos valores y si estan bien los guarda y cierra
         private void acceptButton_Click(object sender, EventArgs e)
         {
             try

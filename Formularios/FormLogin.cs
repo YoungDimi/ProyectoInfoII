@@ -1,35 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GestionUsuarios;
+using System;
 using System.Windows.Forms;
-using GestionUsuarios;
 
 namespace Formularios
 {
+    // ventana de login, sale antes que principal
     public partial class FormLogin : Form
 
     {
-        Gestion mi_base = new Gestion(); // para trabajar con la base de datos de usuarios
-        bool autenticado = false;        // pasa a true cuando el usuario entra correctamente
-        bool baseAbierta = false;        // true si se ha podido abrir la base de datos
+        Gestion mi_base = new Gestion();
+        bool autenticado = false; // true cuando el usuario entra bien
+        bool baseAbierta = false; // true si se ha podido abrir la base de datos
+
         public FormLogin()
         {
             InitializeComponent();
         }
-        // Devuelve true si el usuario se ha identificado correctamente
+
+        // devuelve true si el usuario ha entrado bien
         public bool GetAutenticado()
         {
             return autenticado;
         }
 
+        // abre la base de datos, si no la encuentra avisa y bloquea los botones
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            // abrimos la base de datos; si no se encuentra el fichero, avisamos y no dejamos entrar
             if (mi_base.Iniciar() == -1)
             {
                 MessageBox.Show("No se encuentra la base de datos de usuarios (BaseDatos\\usuarios.db).");
@@ -42,6 +38,7 @@ namespace Formularios
             }
         }
 
+        // comprueba el usuario y la contraseña, si estan bien cierra el login
         private void entrarButton_Click(object sender, EventArgs e)
         {
             string nombre = usuarioBox.Text;
@@ -52,7 +49,12 @@ namespace Formularios
                 MessageBox.Show("Escribe el usuario y la contraseña.");
                 return;
             }
-
+            // con una comilla la sentencia sql no funcionaria
+            if (nombre.Contains("'") || password.Contains("'"))
+            {
+                MessageBox.Show("El usuario y la contraseña no pueden llevar comillas (').");
+                return;
+            }
             if (mi_base.Autenticar(nombre, password) == true)
             {
                 autenticado = true;
@@ -65,6 +67,7 @@ namespace Formularios
 
         }
 
+        // registra un usuario nuevo si no existe ya
         private void registrarButton_Click(object sender, EventArgs e)
         {
             string nombre = usuarioBox.Text;
@@ -76,7 +79,7 @@ namespace Formularios
                 return;
             }
 
-            // una comilla simple rompería la sentencia SQL
+            // con una comilla la sentencia sql no funcionaria
             if (nombre.Contains("'") || password.Contains("'"))
             {
                 MessageBox.Show("El usuario y la contraseña no pueden llevar comillas (').");
@@ -95,9 +98,9 @@ namespace Formularios
                 MessageBox.Show("No se ha podido registrar el usuario.");
         }
 
+        // al cerrar el login se cierra la base de datos
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // al cerrar el login, cerramos la conexión con la base de datos (si se llegó a abrir)
             if (baseAbierta == true)
                 mi_base.Cerrar();
         }

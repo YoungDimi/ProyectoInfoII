@@ -6,18 +6,20 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
+    // ventana principal con el menu
     public partial class Principal : Form
     {
-        FlightPlanList lista; // lista de planes de vuelo
+        FlightPlanList lista;
         double securityDistance;
         int cycleTime;
+
         public Principal()
         {
             InitializeComponent();
         }
 
-        // Pide al usuario un fichero de texto con los planes de vuelo y los carga en la lista.
-        // Si el fichero tiene errores, los muestra y no cambia la lista.
+        // carga los vuelos de un fichero de texto
+        // si el fichero tiene errores los enseña y no cambia la lista
         private void introducirPlanesDeVueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialogo = new OpenFileDialog();
@@ -34,7 +36,7 @@ namespace Formularios
 
                 if (errores.Count > 0)
                 {
-                    // juntamos todos los errores en un solo mensaje, uno por línea
+                    // un error por linea
                     string mensaje = "El fichero tiene errores y no se ha cargado:\n\n";
                     for (int i = 0; i < errores.Count; i++)
                         mensaje = mensaje + errores[i] + "\n";
@@ -43,7 +45,7 @@ namespace Formularios
                     return;
                 }
 
-                lista = nueva; // si no hay errores, nos quedamos con la lista nueva
+                lista = nueva;
                 MessageBox.Show("Se han cargado " + lista.GetNumber() + " planes de vuelo.", "Carga correcta");
             }
             catch (FileNotFoundException)
@@ -56,6 +58,7 @@ namespace Formularios
             }
         }
 
+        // abre la ventana de configuracion y luego recoge los valores
         private void configuraciónDelSimuladorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAddConfig formAddConfig = new FormAddConfig();
@@ -67,11 +70,9 @@ namespace Formularios
             cycleTime = formAddConfig.GetCycleTime();
         }
 
-       
-
+        // abre el espacio aereo si ya hay vuelos y configuracion
         private void espacioAereoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // primero comprobamos que hay vuelos y que el simulador está configurado
             if (lista == null || lista.GetNumber() == 0)
             {
                 MessageBox.Show("Introduce los planes de vuelo primero.");
@@ -82,14 +83,10 @@ namespace Formularios
                 MessageBox.Show("Configura primero el simulador (tiempo de ciclo y distancia de seguridad).");
                 return;
             }
-            // ahora si, podemos abrir el nuevo form
+
             FormEspacioAereo formEspacioAereo = new FormEspacioAereo();
-
-
-            // le pasamamos al formEspacioAereo la informacion
             formEspacioAereo.SetFlightPlans(lista);
             formEspacioAereo.SetConfig(securityDistance, cycleTime);
-            //ahora q ya ha recibido la info podemos abrir el formespacio aereo
             formEspacioAereo.ShowDialog();
 
         }

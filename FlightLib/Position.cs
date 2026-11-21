@@ -2,32 +2,28 @@
 
 namespace FlightLib
 {
+    // punto (x, y) del espacio aereo
     public class Position
     {
-       
-        double x; // coordenada X (2D)
-        double y; // coordenada Y (2D)
+        double x;
+        double y;
 
-        
-
+        // crea el punto
         public Position(double x, double y)
         {
             this.x = x;
             this.y = y;
         }
 
-        
-
+        // gets de las coordenadas
         public double GetX()
-        // getter del atributo x
         { return x; }
 
         public double GetY()
-        // getter del atributo y
         { return y; }
 
+        // devuelve la distancia hasta el punto b
         public double Distancia(Position b)
-        // retorna la distancia entre los dos Postion
         {
             double resultado = Math.Sqrt((x - b.x) * (x - b.x) + (y - b.y) * (y - b.y));
             return resultado;
